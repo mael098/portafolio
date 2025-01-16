@@ -3,10 +3,10 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Ivan Asdrubal Villegas Espinosa | Desarrollador Web">
-  <nav class="fixed top-0 w-[100%] bg-amber-950 p-4 z-100 ">
-    <div class="flex flex-row justify-between items-center">
-      <span class="size-5 ">☕ IV</span>
-      <div class="flex flex-row gap-4">
+  <nav class="navbar">
+    <div class="container">
+      <span class="logo">☕ IV</span>
+      <div class="nav-links">
         <a href="#about">Sobre mí</a>
         <a href="#projects">Proyectos</a>
         <a href="#skills">Habilidades</a>
@@ -16,21 +16,21 @@ import Layout from "../layouts/Layout.astro";
   </nav>
 
   <main>
-    <section class="min-h-screen flex items-center justify-center bg-cover bg-center bg-fixed bg-no-repeat bg-[url('../../public/cafe.avif')]" >
-      <div class=" flex flex-col justify-center text-center">
-        <div class="size-8 leading-tight m-b-[2rem] tracking-tighter-[1rem]">☕ ☕ ☕</div>
-        <h1 class="font-black text-6xl m-b-1">
+    <section class="hero">
+      <div class="container">
+        <div class="coffee-beans">☕ ☕ ☕</div>
+        <h1>
           Ivan Asdrubal <br /><span class="highlight">Villegas Espinosa</span>
         </h1>
-        <p class="mb-5 font-mono font-thin  text-[#D4A574]">Ingeniero en Sistemas & Desarrollador Web</p>
-        <div class="tagline size-6 max-h-w-[600px] m-auto text-[#8B7355]">
+        <p class="subtitle">Ingeniero en Sistemas & Desarrollador Web</p>
+        <div class="tagline">
           Desarrollando soluciones digitales con la misma dedicación que un
           barista prepara el café perfecto
         </div>
       </div>
     </section>
 
-    <section id="about" class="about bg-[--var(cafe-medium)]">
+    <section id="about" class="about">
       <div class="container">
         <h2>Sobre mí</h2>
         <div class="about-content">
@@ -123,7 +123,7 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <style>
-  /* .navbar {
+  .navbar {
     position: fixed;
     top: 0;
     width: 100%;
@@ -140,7 +140,7 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .logo {
-    font-family: "Playfair Display", serif";
+    font-family: "Playfair Display", serif;
     font-size: 1.5rem;
     color: var(--accent);
   }
@@ -273,9 +273,7 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .project-info h3 {
-    color: var(--accent); .highlight {
     color: var(--accent);
-  }
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
   }
@@ -389,8 +387,5 @@ import Layout from "../layouts/Layout.astro";
     .project-grid {
       grid-template-columns: 1fr;
     }
-  } */
-  .highlight {
-    color: var(--accent);
   }
 </style>
