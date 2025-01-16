@@ -4,5 +4,7 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: []
-});
+  integrations: [],
+  site:'https://mael098.github.io',
+  base:"/portafolio"
+})
