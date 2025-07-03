@@ -3,8 +3,22 @@ import Layout from "../layouts/Layout.astro";
 import "./_estilos.css";
 import Card from "../components/Card.astro";
 ---
+<!-- <script>
+  window.addEventListener("load", () => {
+    const loaderOverlay = document.getElementById("loader-overlay");
+    if (loaderOverlay) {
+      loaderOverlay.style.opacity = "3";
+      setTimeout(() => {
+        loaderOverlay.style.display = "none";
+      }, 2000);
+    }
+  });
+</script> -->
 
 <Layout title="Ivan Asdrubal Villegas Espinosa | Ingeniero en Sistemas">
+  <div id="loader-overlay">
+    <span class="loader-text">Bienvenido</span>
+  </div>
   <nav class="navbar">
     <div class="container">
       <span class="logo">IV</span>
@@ -128,3 +142,11 @@ import Card from "../components/Card.astro";
     </section>
   </main>
 </Layout>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      document.getElementById('loader-overlay').classList.add('hide');
+    }, 2000); // Puedes ajustar el tiempo si quieres
+  });
+</script>
