@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "./_estilos.css";
+import Card from "../components/Card.astro";
 ---
 
 <Layout title="Ivan Asdrubal Villegas Espinosa | Ingeniero en Sistemas">
@@ -53,44 +54,20 @@ import "./_estilos.css";
       <div class="container">
         <h2>Proyectos Destacados</h2>
         <div class="project-grid">
-          <a href="/cafe" class="project-card">
-            <div class="project-image">
-              <img src="../../public/cafe.avif" alt="Sistema Inmobiliario" />
-            </div>
-            <div class="project-info">
-              <h3>Sistema Inmobiliario</h3>
-              <p>
-                Plataforma web moderna para gestión de propiedades inmobiliarias
-              </p>
-              <ul class="tech-stack">
-                <li>Next.js</li>
-                <li>Tailwind CSS</li>
-                <li>Node.js</li>
-                <li>MongoDB</li>
-              </ul>
-              <span class="view-project">Ver Proyecto →</span>
-            </div>
-          </a>
-
-          <a href="/proyecto2" class="project-card">
-            <div class="project-image">
-              <img
-                src="../../public/proyecto2.avif"
-                alt="Sistema de Gestión Empresarial"
-              />
-            </div>
-            <div class="project-info">
-              <h3>Sistema de Gestión Empresarial</h3>
-              <p>Aplicación completa para gestión de recursos empresariales</p>
-              <ul class="tech-stack">
-                <li>React</li>
-                <li>Node.js</li>
-                <li>PostgreSQL</li>
-                <li>Docker</li>
-              </ul>
-              <span class="view-project">Ver Proyecto →</span>
-            </div>
-          </a>
+          <Card
+            title="Sistema Inmobiliario"
+            body="Plataforma web moderna para gestión de propiedades inmobiliarias"
+            image="/cafe.avif"
+            techStack={["Next.js", "Tailwind CSS", "Node.js", "MongoDB"]}
+            href="/cafe"
+          />
+          <Card
+            title="Sistema de Gestión Empresarial"
+            body="Aplicación completa para gestión de recursos empresariales"
+            image="/proyecto2.avif"
+            techStack={["React", "Node.js", "PostgreSQL", "Docker"]}
+            href="/proyecto2"
+          />
         </div>
       </div>
     </section>
@@ -149,3 +126,5 @@ import "./_estilos.css";
         </div>
       </div>
     </section>
+  </main>
+</Layout>
