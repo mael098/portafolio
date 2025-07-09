@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import "./_estilos.css";
 import Card from "../components/Card.astro";
+import Nav from "../components/nav.astro";
+import Hero from "../components/Hero.astro";
 ---
 <!-- <script>
   window.addEventListener("load", () => {
@@ -30,19 +32,11 @@ import Card from "../components/Card.astro";
       </div>
     </div>
   </nav>
+  <!-- <Nav/> -->
+
 
   <main>
-    <section class="hero">
-      <div class="container">
-        <h1>
-          Ivan Asdrubal <br /><span class="highlight">Villegas Espinosa</span>
-        </h1>
-        <p class="subtitle">Ingeniero en Sistemas & Desarrollador Web</p>
-        <div class="tagline">
-          Desarrollando soluciones tecnológicas con precisión y pasión
-        </div>
-      </div>
-    </section>
+  <Hero/>
 
     <section id="about" class="about">
       <div class="container">
