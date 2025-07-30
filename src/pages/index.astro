@@ -5,39 +5,69 @@ import Card from "../components/Card.astro";
 import Nav from "../components/nav.astro";
 import Hero from "../components/Hero.astro";
 ---
-<!-- <script>
-  window.addEventListener("load", () => {
-    const loaderOverlay = document.getElementById("loader-overlay");
-    if (loaderOverlay) {
-      loaderOverlay.style.opacity = "3";
-      setTimeout(() => {
-        loaderOverlay.style.display = "none";
-      }, 2000);
-    }
-  });
-</script> -->
 
 <Layout title="Ivan Asdrubal Villegas Espinosa | Ingeniero en Sistemas">
   <div id="loader-overlay">
     <span class="loader-text">Bienvenido</span>
   </div>
-  <nav class="navbar">
+  
+  <!-- Navbar moderna -->
+  <nav class="modern-navbar">
     <div class="container">
-      <span class="logo">IV</span>
+      <div class="nav-brand">
+        <img src="/profile.jpg" alt="IV" class="profile-pic">
+      </div>
       <div class="nav-links">
         <a href="#about">Sobre mí</a>
+        <a href="#experience">Experiencia</a>
         <a href="#projects">Proyectos</a>
-        <a href="#skills">Especialidades</a>
-        <a href="#contact">Contacto</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contacta</a>
       </div>
+      <button class="theme-toggle">🌙</button>
     </div>
   </nav>
-  <!-- <Nav/> -->
-
 
   <main>
-  <Hero/>
+    <!-- Hero Section Espacial -->
+    <section class="space-hero">
+      <div class="stars"></div>
+      <div class="container">
+        <div class="hero-content">
+          <h1>
+            👋 ¡Hola, soy <span class="gradient-text">Ivan!</span>
+          </h1>
+          <p class="hero-subtitle">
+            Futuro desarrollador de software senior. <em>Step by step, ¿Me ayudas?</em>
+          </p>
+          
+          <div class="enjoying-section">
+            <span class="enjoying-label">Enjoying</span>
+            <div class="tech-icons">
+              <span class="tech-icon html">HTML</span>
+              <span class="tech-icon js">JS</span>
+              <span class="tech-icon firebase">🔥</span>
+              <span class="tech-icon python">🐍</span>
+              <span class="tech-icon git">Git</span>
+              <span class="tech-icon css">CSS</span>
+            </div>
+          </div>
 
+          <p class="hero-description">
+            Busco oportunidades prácticas donde aprender y aportar, para que el lema del proyecto no sea
+            <br><em>"esto no debería pasar..."</em>
+            <br>Y encontremos juntos soluciones creativas y eficaces.🚀
+          </p>
+
+          <div class="hero-buttons">
+            <a href="/cv.pdf" class="btn-primary">CV ⬇</a>
+            <a href="#about" class="btn-secondary">Conóceme</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resto de secciones existentes -->
     <section id="about" class="about">
       <div class="container">
         <h2>Sobre mí</h2>
@@ -58,6 +88,7 @@ import Hero from "../components/Hero.astro";
       </div>
     </section>
 
+    <!-- Resto de tu código existente... -->
     <section id="projects" class="projects">
       <div class="container">
         <h2>Proyectos Destacados</h2>
@@ -123,12 +154,12 @@ import Hero from "../components/Hero.astro";
         </div>
       </div>
     </section>
+
     <section id="contact" class="contact">
       <div class="container">
         <h2>¿Tomamos un café?</h2>
         <p>Conversemos sobre tu próximo proyecto</p>
         <div class="social-links">
-          <!-- <a href="mailto:ivan.villegas@example.com" class="button">Email</a> -->
           <a href="https://github.com/mael098" class="button">GitHub</a>
           <a href="https://www.linkedin.com/in/ivan-villegas-espinosa-08185923b/" class="button">LinkedIn</a>
         </div>
@@ -139,11 +170,21 @@ import Hero from "../components/Hero.astro";
 
 <script>
   window.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-      const loader = document.getElementById('loader-overlay');
-      if (loader) {
-        loader.classList.add('hide');
+    // Verifica si ya se mostró el loader antes
+    if (localStorage.getItem('loaderShown')) {
+      const loaderOverlay = document.getElementById('loader-overlay');
+      if (loaderOverlay) {
+        loaderOverlay.style.display = 'none';
       }
-    }, 2000); // Puedes ajustar el tiempo si quieres
+    } else {
+      setTimeout(() => {
+        const loaderOverlay = document.getElementById('loader-overlay');
+        if (loaderOverlay) {
+          loaderOverlay.classList.add('hide');
+        }
+        // Marca que ya se mostró el loader
+        localStorage.setItem('loaderShown', 'true');
+      }, 2000);
+    }
   });
 </script>
