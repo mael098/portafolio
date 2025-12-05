@@ -317,11 +317,11 @@ section {
 }
 
 /* Responsive */
-@media (max-width: 968px) {
+@media (max-width: 1024px) {
   .modern-navbar {
-    top: 10px;
-    width: calc(100% - 20px);
-    padding: 12px 20px;
+    padding: 14px 24px;
+    width: calc(100% - 32px);
+    top: 16px;
   }
 
   .nav-links {
@@ -333,13 +333,57 @@ section {
   }
 
   .contact-section {
+    padding: 100px 0 80px;
+  }
+
+  .contact-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+}
+
+@media (max-width: 968px) {
+  .modern-navbar {
+    top: 10px;
+    width: calc(100% - 20px);
+    padding: 12px 20px;
+  }
+
+  .brand-text {
+    font-size: 1.25rem;
+  }
+
+  .nav-links {
+    gap: 1.25rem;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+  }
+
+  .contact-section {
     padding: 80px 0;
+  }
+
+  .contact-container {
+    padding: 0 20px;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+
+  .contact-description {
+    font-size: 1rem;
+    margin-bottom: 32px;
   }
 }
 
 @media (max-width: 640px) {
   .modern-navbar {
     border-radius: 40px;
+    padding: 10px 16px;
+    top: 8px;
   }
 
   .nav-container {
@@ -349,34 +393,98 @@ section {
 
   .nav-links {
     display: none;
+    /* TODO: Agregar menú hamburguesa para móviles */
   }
 
   .brand-text {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
+  }
+
+  .contact-section {
+    padding: 60px 0 40px;
+  }
+
+  .contact-container {
+    padding: 0 16px;
   }
 
   .contact-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    margin-bottom: 12px;
   }
 
   .contact-description {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  .contact-actions {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
   }
 
   .contact-btn {
     width: 100%;
     justify-content: center;
+    padding: 12px 24px;
+    font-size: 0.9rem;
   }
 
   .social-links {
     width: 100%;
+    gap: 12px;
   }
 
   .social-btn {
     flex: 1;
     justify-content: center;
+    padding: 12px;
+  }
+
+  .footer {
+    padding: 32px 16px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .footer-text {
+    font-size: 0.85rem;
   }
 }
+
+@media (max-width: 380px) {
+  .modern-navbar {
+    padding: 8px 12px;
+  }
+
+  .brand-text {
+    font-size: 1rem;
+  }
+
+  .contact-title {
+    font-size: 1.5rem;
+  }
+
+  .contact-description {
+    font-size: 0.875rem;
+  }
+
+  .contact-btn {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+  }
+
+  .social-btn {
+    padding: 10px;
+  }
+}
+
 
 /* Estilos adicionales para compatibilidad */
 h2 {

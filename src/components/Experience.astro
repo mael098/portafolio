@@ -516,13 +516,50 @@ const achievements = [
   }
 
   /* Responsive */
+  @media (max-width: 1024px) {
+    .experience-section {
+      padding: 100px 0 80px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .timeline-content {
+      padding: 28px;
+    }
+  }
+
   @media (max-width: 968px) {
     .experience-section {
       padding: 80px 0;
     }
 
+    .container {
+      padding: 0 20px;
+    }
+
+    .section-header {
+      margin-bottom: 50px;
+    }
+
+    .section-tag {
+      font-size: 0.7rem;
+      padding: 6px 14px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .section-description {
+      font-size: 1rem;
+    }
+
     .experience-timeline {
       padding-left: 60px;
+      gap: 48px;
     }
 
     .timeline-marker {
@@ -539,13 +576,55 @@ const achievements = [
     }
 
     .achievements-grid {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .education-section {
+      margin-top: 60px;
+    }
+
+    .education-grid {
+      gap: 20px;
     }
   }
 
   @media (max-width: 640px) {
+    .experience-section {
+      padding: 60px 0 40px;
+    }
+
+    .container {
+      padding: 0 16px;
+    }
+
+    .section-header {
+      margin-bottom: 40px;
+    }
+
+    .section-tag {
+      padding: 6px 12px;
+      font-size: 0.65rem;
+      letter-spacing: 1.5px;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      margin-bottom: 12px;
+    }
+
+    .section-description {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
     .experience-timeline {
       padding-left: 40px;
+      gap: 40px;
+    }
+
+    .timeline-item {
+      padding-bottom: 30px;
     }
 
     .timeline-marker {
@@ -565,15 +644,148 @@ const achievements = [
     }
 
     .timeline-content {
-      padding: 24px;
+      padding: 20px;
+      border-radius: 16px;
+    }
+
+    .job-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 12px;
     }
 
     .job-role {
-      font-size: 1.25rem;
+      font-size: 1.125rem;
+      margin-bottom: 6px;
+    }
+
+    .job-company {
+      font-size: 0.9rem;
+    }
+
+    .job-period {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+    }
+
+    .job-description {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .achievements-title {
+      font-size: 0.875rem;
+      margin-bottom: 12px;
     }
 
     .achievements-grid {
       grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .achievement-card {
+      padding: 10px 12px;
+      font-size: 0.8rem;
+    }
+
+    .achievement-icon {
+      font-size: 0.85rem;
+      width: 20px;
+      height: 20px;
+    }
+
+    .tech-stack {
+      gap: 6px;
+      margin-top: 16px;
+    }
+
+    .tech-badge {
+      padding: 4px 10px;
+      font-size: 0.7rem;
+    }
+
+    .education-section {
+      margin-top: 40px;
+    }
+
+    .education-title {
+      font-size: 1.25rem;
+      margin-bottom: 20px;
+    }
+
+    .title-icon {
+      font-size: 1.5rem;
+    }
+
+    .education-grid {
+      gap: 16px;
+    }
+
+    .education-card {
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+    .edu-degree {
+      font-size: 1.125rem;
+      margin-bottom: 6px;
+    }
+
+    .edu-institution {
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    .edu-period {
+      font-size: 0.8rem;
+    }
+
+    .edu-details {
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .section-title {
+      font-size: 1.5rem;
+    }
+
+    .section-description {
+      font-size: 0.875rem;
+    }
+
+    .experience-timeline {
+      padding-left: 35px;
+    }
+
+    .timeline-marker {
+      left: -40px;
+      width: 28px;
+      height: 28px;
+    }
+
+    .marker-dot {
+      width: 10px;
+      height: 10px;
+    }
+
+    .timeline-content {
+      padding: 16px;
+    }
+
+    .job-role {
+      font-size: 1rem;
+    }
+
+    .job-company {
+      font-size: 0.85rem;
+    }
+
+    .achievement-card {
+      font-size: 0.75rem;
     }
   }
 </style>

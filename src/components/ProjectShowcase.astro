@@ -16,7 +16,7 @@ const projects: Project[] = [
     description: "Aplicación web fullstack para mapear y segmentar el municipio de Tampico. Incluye análisis estadístico, visualización geoespacial, dashboard interactivo y arquitectura de microservicios con autenticación JWT.",
     image: "/image.png",
     technologies: ["React", "Node.js", "PostgreSQL", "Docker", "Redis", "JWT"],
-    liveUrl: "https://tu-proyecto.vercel.app",
+    liveUrl: "http://geotampico.com.mx/",
     githubUrl: "https://github.com/mael098/proyecto",
     category: "fullstack",
     featured: true
@@ -26,7 +26,7 @@ const projects: Project[] = [
     description: "Sistema web para gestionar, registrar y visualizar jornadas realizadas en el municipio, incluyendo ubicación, estadísticas, asistencia y reportes para dependencias como el Instituto de la Juventud.",
     image: "/image copy.png",
     technologies: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind", "Mapbox"],
-    liveUrl: "https://jornadas-tampico.vercel.app", // cámbialo por tu URL real
+    liveUrl: "https://jornadas-sistemas-2025.vercel.app/", // cámbialo por tu URL real
     githubUrl: "https://github.com/mael098/jornadas", // ajusta si es otro repo
     category: "fullstack",
     featured: true
@@ -503,13 +503,45 @@ const regularProjects = projects.filter(p => !p.featured);
   }
 
   /* Responsive */
+  @media (max-width: 1024px) {
+    .projects-section {
+      padding: 100px 0 80px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+    }
+
+    .projects-grid {
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+  }
+
   @media (max-width: 968px) {
     .projects-section {
-      padding: 80px 0;
+      padding: 80px 0 60px;
+    }
+
+    .container {
+      padding: 0 20px;
     }
 
     .section-header {
-      margin-bottom: 60px;
+      margin-bottom: 50px;
+    }
+
+    .section-tag {
+      font-size: 0.7rem;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .section-description {
+      font-size: 1rem;
     }
 
     .project-card.featured {
@@ -523,40 +555,133 @@ const regularProjects = projects.filter(p => !p.featured);
 
     .projects-grid {
       grid-template-columns: 1fr;
+      gap: 20px;
     }
 
     .featured-projects {
-      margin-bottom: 60px;
+      margin-bottom: 50px;
+      gap: 20px;
+    }
+
+    .project-content {
+      padding: 24px;
     }
   }
 
   @media (max-width: 640px) {
+    .projects-section {
+      padding: 60px 0 40px;
+    }
+
+    .container {
+      padding: 0 16px;
+    }
+
+    .section-header {
+      margin-bottom: 40px;
+    }
+
+    .section-tag {
+      padding: 6px 12px;
+      font-size: 0.65rem;
+      letter-spacing: 1.5px;
+    }
+
     .section-title {
-      font-size: 2rem;
+      font-size: 1.75rem;
+      margin-bottom: 12px;
     }
 
     .section-description {
-      font-size: 1rem;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .featured-projects,
+    .projects-grid {
+      gap: 16px;
+    }
+
+    .project-card {
+      border-radius: 16px;
+    }
+
+    .project-content {
+      padding: 20px;
+    }
+
+    .project-category {
+      font-size: 0.7rem;
+      padding: 4px 10px;
+    }
+
+    .project-title {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    .project-description {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .project-tech {
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .tech-tag {
+      padding: 4px 10px;
+      font-size: 0.7rem;
     }
 
     .overlay-content {
       flex-direction: column;
-      width: 100%;
+      gap: 12px;
       padding: 20px;
     }
 
     .overlay-btn {
       width: 100%;
       justify-content: center;
+      padding: 12px 20px;
+      font-size: 0.9rem;
     }
 
     .project-links {
       flex-direction: column;
+      gap: 10px;
     }
 
     .link-btn {
       width: 100%;
       justify-content: center;
+      padding: 10px 20px;
+      font-size: 0.85rem;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .section-title {
+      font-size: 1.5rem;
+    }
+
+    .section-description {
+      font-size: 0.875rem;
+    }
+
+    .project-title {
+      font-size: 1.125rem;
+    }
+
+    .project-description {
+      font-size: 0.85rem;
+    }
+
+    .tech-tag {
+      font-size: 0.65rem;
+      padding: 3px 8px;
     }
   }
 </style>
