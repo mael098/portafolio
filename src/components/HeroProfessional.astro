@@ -1,0 +1,662 @@
+---
+const socialLinks = [
+  {
+    name: "GitHub",
+    url: "https://github.com/mael098",
+    icon: "github"
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/ivan-villegas-espinosa-08185923b/",
+    icon: "linkedin"
+  },
+  {
+    name: "Email",
+    url: "mailto:ivan@ejemplo.com",
+    icon: "email"
+  }
+];
+
+const stats = [
+  { value: "5+", label: "Proyectos Completados" },
+  { value: "10+", label: "Tecnologías Dominadas" },
+  { value: "100%", label: "Código Limpio" }
+];
+---
+
+<section id="hero" class="hero-section">
+  <div class="hero-background">
+    <div class="grid-overlay"></div>
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <span class="status-indicator"></span>
+          <span class="badge-text">Disponible para proyectos</span>
+        </div>
+
+        <h1 class="hero-title">
+          Hola, soy <br />
+          <span class="gradient-text">Ivan Asdrubal</span><br />
+          <span class="highlight-text">Villegas Espinosa</span>
+        </h1>
+
+        <div class="title-decoration">
+          <span class="decoration-line"></span>
+          <span class="decoration-text">Ingeniero en Sistemas Computacionales</span>
+          <span class="decoration-line"></span>
+        </div>
+
+        <p class="hero-description">
+          Especialista en <strong>desarrollo fullstack</strong> con enfoque en arquitecturas escalables, 
+          microservicios y optimización de rendimiento. Transformo ideas complejas en 
+          soluciones tecnológicas robustas y eficientes.
+        </p>
+
+        <div class="hero-specialties">
+          <div class="specialty-tag">
+            <span class="specialty-icon">⚡</span>
+            <span>Performance Optimization</span>
+          </div>
+          <div class="specialty-tag">
+            <span class="specialty-icon">🏗️</span>
+            <span>System Architecture</span>
+          </div>
+          <div class="specialty-tag">
+            <span class="specialty-icon">☁️</span>
+            <span>Cloud Solutions</span>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">
+            <span>Ver Proyectos</span>
+            <span class="btn-icon">→</span>
+          </a>
+          <a href="#contact" class="btn-secondary">
+            <span>Contactar</span>
+          </a>
+          <a href="/cv.pdf" class="btn-outline" download>
+            <span class="btn-icon">📄</span>
+            <span>Descargar CV</span>
+          </a>
+        </div>
+
+        <div class="social-links">
+          {socialLinks.map((link) => (
+            <a 
+              href={link.url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="social-link"
+              aria-label={link.name}
+            >
+              {link.icon === "github" && (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+              )}
+              {link.icon === "linkedin" && (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+              )}
+              {link.icon === "email" && (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              )}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="code-window">
+          <div class="window-header">
+            <div class="window-controls">
+              <span class="control red"></span>
+              <span class="control yellow"></span>
+              <span class="control green"></span>
+            </div>
+            <span class="window-title">engineer.ts</span>
+          </div>
+<div class="window-content">
+  <pre><code class="code-snippet"><span class="code-keyword">const</span> <span class="code-variable">engineer</span> = {'{'}<br/>  <span class="code-property">nombre</span>: <span class="code-string">"Ivan Villegas"</span>,<br/>  <span class="code-property">rol</span>: <span class="code-string">"Fullstack Engineer"</span>,<br/>  <span class="code-property">especialidades</span>: [<br/>    <span class="code-string">"React"</span>, <span class="code-string">"Node.js"</span>, <span class="code-string">"TypeScript"</span><br/>  ],<br/>  <span class="code-property">enfoque</span>: () =&gt; {'{'}<br/>    <span class="code-keyword">return</span> <span class="code-string">"Clean Code + Scalability"</span>;<br/>  {'}'}<br/>{'};'}</code></pre>
+</div>
+        </div>
+
+        <div class="stats-grid">
+          {stats.map((stat) => (
+            <div class="stat-card">
+              <div class="stat-value">{stat.value}</div>
+              <div class="stat-label">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span class="scroll-text">Scroll para explorar</span>
+      <div class="scroll-arrow">↓</div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    background: #0a0a0a;
+    padding: 120px 0 80px;
+  }
+
+  .hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(244, 162, 97, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(244, 162, 97, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: radial-gradient(circle at center, black, transparent 80%);
+  }
+
+  .gradient-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.6;
+    animation: float 20s infinite ease-in-out;
+  }
+
+  .orb-1 {
+    top: 10%;
+    right: 10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(244, 162, 97, 0.3), transparent 70%);
+  }
+
+  .orb-2 {
+    bottom: 20%;
+    left: 10%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(231, 111, 81, 0.3), transparent 70%);
+    animation-delay: -5s;
+  }
+
+  .orb-3 {
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(255, 229, 180, 0.2), transparent 70%);
+    animation-delay: -10s;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(30px, -30px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    border-radius: 50px;
+    margin-bottom: 24px;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  .status-indicator {
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+    animation: blink 1.5s infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+
+  .badge-text {
+    color: rgba(34, 197, 94, 0.9);
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #f4a261 0%, #e76f51 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .highlight-text {
+    color: #ffffff;
+    position: relative;
+    display: inline-block;
+  }
+
+  .title-decoration {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .decoration-line {
+    height: 2px;
+    flex: 1;
+    background: linear-gradient(90deg, transparent, rgba(244, 162, 97, 0.5), transparent);
+  }
+
+  .decoration-text {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    white-space: nowrap;
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 32px;
+  }
+
+  .hero-description strong {
+    color: #f4a261;
+    font-weight: 600;
+  }
+
+  .hero-specialties {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  .specialty-tag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .specialty-tag:hover {
+    background: rgba(244, 162, 97, 0.1);
+    border-color: rgba(244, 162, 97, 0.3);
+    transform: translateY(-2px);
+  }
+
+  .specialty-icon {
+    font-size: 1rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-outline {
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #f4a261, #e76f51);
+    color: #ffffff;
+    border: none;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(244, 162, 97, 0.4);
+  }
+
+  .btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(244, 162, 97, 0.5);
+  }
+
+  .btn-outline:hover {
+    background: rgba(244, 162, 97, 0.1);
+    border-color: #f4a261;
+  }
+
+  .btn-icon {
+    font-size: 1.2rem;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 16px;
+  }
+
+  .social-link {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+  }
+
+  .social-link:hover {
+    background: rgba(244, 162, 97, 0.2);
+    border-color: rgba(244, 162, 97, 0.5);
+    color: #f4a261;
+    transform: translateY(-4px);
+  }
+
+  /* Hero Visual */
+  .hero-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .code-window {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+  }
+
+  .window-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .window-controls {
+    display: flex;
+    gap: 8px;
+  }
+
+  .control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .control.red {
+    background: #ff5f56;
+  }
+
+  .control.yellow {
+    background: #ffbd2e;
+  }
+
+  .control.green {
+    background: #27c93f;
+  }
+
+  .window-title {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.875rem;
+  }
+
+  .window-content {
+    padding: 24px;
+  }
+
+  .code-snippet {
+    font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .code-keyword {
+    color: #ff79c6;
+  }
+
+  .code-variable {
+    color: #8be9fd;
+  }
+
+  .code-property {
+    color: #50fa7b;
+  }
+
+  .code-string {
+    color: #f1fa8c;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  .stat-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .stat-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(244, 162, 97, 0.3);
+    transform: translateY(-4px);
+  }
+
+  .stat-value {
+    font-size: 2rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #f4a261, #e76f51);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.3;
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.6;
+  }
+
+  .scroll-text {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .scroll-arrow {
+    font-size: 1.5rem;
+    color: #f4a261;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 968px) {
+    .hero-section {
+      padding: 80px 0 60px;
+    }
+
+    .hero-content {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .hero-visual {
+      order: -1;
+    }
+
+    .stats-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-description {
+      font-size: 1rem;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-outline {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .title-decoration {
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .decoration-line {
+      width: 100%;
+    }
+
+    .code-snippet {
+      font-size: 0.75rem;
+    }
+  }
+</style>

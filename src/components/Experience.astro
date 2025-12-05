@@ -1,0 +1,579 @@
+---
+const experience = [
+  {
+    role: "Desarrollador Fullstack",
+    company: "Tech Solutions",
+    period: "2023 - Presente",
+    description: "Desarrollo de aplicaciones web escalables con React, Node.js y AWS. Implementación de arquitecturas de microservicios y optimización de rendimiento.",
+    achievements: [
+      "Reducción del 40% en tiempo de carga mediante optimización de código",
+      "Implementación de CI/CD pipeline reduciendo deployment time en 60%",
+      "Liderazgo en migración de monolito a microservicios"
+    ],
+    technologies: ["React", "Node.js", "PostgreSQL", "Docker", "AWS"]
+  },
+  {
+    role: "Desarrollador Backend",
+    company: "Innovation Labs",
+    period: "2022 - 2023",
+    description: "Diseño e implementación de APIs RESTful robustas y sistemas de autenticación seguros. Gestión de bases de datos y optimización de consultas.",
+    achievements: [
+      "Diseño de API usada por 50K+ usuarios diarios",
+      "Implementación de sistema de caché reduciendo carga DB en 70%",
+      "Desarrollo de herramientas internas que aumentaron productividad 35%"
+    ],
+    technologies: ["Node.js", "Express", "MongoDB", "Redis"]
+  }
+];
+
+const education = [
+  {
+    degree: "Ingeniería en Sistemas Computacionales",
+    institution: "Universidad Tecnológica",
+    period: "2019 - 2024",
+    highlight: "Especialización en Arquitectura de Software"
+  }
+];
+
+const achievements = [
+  {
+    icon: "🏆",
+    title: "Hackathon Winner",
+    description: "Primer lugar en competencia de desarrollo con 200+ participantes"
+  },
+  {
+    icon: "⭐",
+    title: "Open Source Contributor",
+    description: "Contribuciones activas a proyectos con 10K+ estrellas en GitHub"
+  },
+  {
+    icon: "🎯",
+    title: "Performance Expert",
+    description: "Optimización de aplicaciones logrando mejoras de 60% en rendimiento"
+  },
+  {
+    icon: "🚀",
+    title: "Innovation Leader",
+    description: "Implementación de nuevas tecnologías mejorando workflows del equipo"
+  }
+];
+---
+
+<section id="experience" class="experience-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">TRAYECTORIA</span>
+      <h2 class="section-title">Experiencia & Logros</h2>
+      <p class="section-description">
+        Trayectoria profesional construyendo soluciones tecnológicas que impactan positivamente 
+        en usuarios y equipos de desarrollo.
+      </p>
+    </div>
+
+    <!-- Timeline de Experiencia -->
+    <div class="experience-timeline">
+      <div class="timeline-line"></div>
+      {experience.map((job, index) => (
+        <article class="timeline-item" data-index={index}>
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            <div class="marker-ring"></div>
+          </div>
+          
+          <div class="timeline-content">
+            <div class="job-header">
+              <div class="job-info">
+                <h3 class="job-role">{job.role}</h3>
+                <p class="job-company">{job.company}</p>
+              </div>
+              <span class="job-period">{job.period}</span>
+            </div>
+
+            <p class="job-description">{job.description}</p>
+
+            <div class="achievements-list">
+              <h4 class="achievements-title">Logros principales:</h4>
+              <ul class="achievements-items">
+                {job.achievements.map((achievement) => (
+                  <li class="achievement-item">
+                    <span class="achievement-icon">✓</span>
+                    <span>{achievement}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="tech-tags">
+              {job.technologies.map((tech) => (
+                <span class="tech-tag">{tech}</span>
+              ))}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- Educación -->
+    <div class="education-section">
+      <h3 class="subsection-title">
+        <span class="title-icon">🎓</span>
+        Educación
+      </h3>
+      <div class="education-grid">
+        {education.map((edu) => (
+          <div class="education-card">
+            <div class="edu-content">
+              <h4 class="edu-degree">{edu.degree}</h4>
+              <p class="edu-institution">{edu.institution}</p>
+              <p class="edu-period">{edu.period}</p>
+              {edu.highlight && (
+                <div class="edu-highlight">
+                  <span class="highlight-icon">⭐</span>
+                  <span>{edu.highlight}</span>
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Logros Destacados -->
+    <div class="achievements-section">
+      <h3 class="subsection-title">
+        <span class="title-icon">🌟</span>
+        Logros Destacados
+      </h3>
+      <div class="achievements-grid">
+        {achievements.map((achievement) => (
+          <div class="achievement-card">
+            <div class="achievement-icon-large">{achievement.icon}</div>
+            <h4 class="achievement-title">{achievement.title}</h4>
+            <p class="achievement-description">{achievement.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .experience-section {
+    padding: 120px 0;
+    background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
+    position: relative;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  .section-tag {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(244, 162, 97, 0.1);
+    border: 1px solid rgba(244, 162, 97, 0.3);
+    border-radius: 50px;
+    color: #f4a261;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffffff 0%, #f4a261 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 24px;
+    line-height: 1.1;
+  }
+
+  .section-description {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Timeline */
+  .experience-timeline {
+    position: relative;
+    padding-left: 80px;
+    margin-bottom: 80px;
+  }
+
+  .timeline-line {
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, 
+      rgba(244, 162, 97, 0) 0%, 
+      rgba(244, 162, 97, 0.5) 50%, 
+      rgba(244, 162, 97, 0) 100%
+    );
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 60px;
+  }
+
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline-marker {
+    position: absolute;
+    left: -68px;
+    top: 8px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .marker-dot {
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(135deg, #f4a261, #e76f51);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(244, 162, 97, 0.5);
+    z-index: 2;
+  }
+
+  .marker-ring {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border: 2px solid rgba(244, 162, 97, 0.3);
+    border-radius: 50%;
+    animation: pulse-ring 2s infinite;
+  }
+
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+
+  .timeline-content {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 32px;
+    transition: all 0.3s ease;
+  }
+
+  .timeline-content:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(244, 162, 97, 0.3);
+    transform: translateX(8px);
+  }
+
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    gap: 20px;
+  }
+
+  .job-role {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 4px;
+  }
+
+  .job-company {
+    font-size: 1rem;
+    color: #f4a261;
+    font-weight: 600;
+  }
+
+  .job-period {
+    padding: 6px 16px;
+    background: rgba(244, 162, 97, 0.1);
+    border: 1px solid rgba(244, 162, 97, 0.3);
+    border-radius: 50px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.875rem;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .job-description {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .achievements-list {
+    margin-bottom: 24px;
+  }
+
+  .achievements-title {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+
+  .achievements-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .achievement-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .achievement-icon {
+    color: #22c55e;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .tech-tag {
+    padding: 6px 14px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(244, 162, 97, 0.2);
+    border-radius: 50px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .tech-tag:hover {
+    background: rgba(244, 162, 97, 0.2);
+    border-color: rgba(244, 162, 97, 0.4);
+  }
+
+  /* Educación */
+  .education-section,
+  .achievements-section {
+    margin-top: 80px;
+  }
+
+  .subsection-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .title-icon {
+    font-size: 2rem;
+  }
+
+  .education-grid {
+    display: grid;
+    gap: 24px;
+  }
+
+  .education-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 32px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .education-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #f4a261, #e76f51);
+  }
+
+  .education-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(244, 162, 97, 0.3);
+    transform: translateY(-4px);
+  }
+
+  .edu-degree {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+  }
+
+  .edu-institution {
+    font-size: 1.125rem;
+    color: #f4a261;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .edu-period {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 16px;
+  }
+
+  .edu-highlight {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: rgba(244, 162, 97, 0.1);
+    border: 1px solid rgba(244, 162, 97, 0.3);
+    border-radius: 50px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .highlight-icon {
+    font-size: 1rem;
+  }
+
+  /* Logros */
+  .achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .achievement-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .achievement-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(244, 162, 97, 0.3);
+    transform: translateY(-8px);
+  }
+
+  .achievement-icon-large {
+    font-size: 3rem;
+    margin-bottom: 16px;
+  }
+
+  .achievement-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+  }
+
+  .achievement-description {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+  }
+
+  /* Responsive */
+  @media (max-width: 968px) {
+    .experience-section {
+      padding: 80px 0;
+    }
+
+    .experience-timeline {
+      padding-left: 60px;
+    }
+
+    .timeline-marker {
+      left: -56px;
+    }
+
+    .job-header {
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .job-period {
+      align-self: flex-start;
+    }
+
+    .achievements-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .experience-timeline {
+      padding-left: 40px;
+    }
+
+    .timeline-marker {
+      left: -44px;
+      width: 32px;
+      height: 32px;
+    }
+
+    .marker-dot {
+      width: 12px;
+      height: 12px;
+    }
+
+    .marker-ring {
+      width: 32px;
+      height: 32px;
+    }
+
+    .timeline-content {
+      padding: 24px;
+    }
+
+    .job-role {
+      font-size: 1.25rem;
+    }
+
+    .achievements-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

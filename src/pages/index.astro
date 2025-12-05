@@ -1,171 +1,90 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import "./_estilos.css";
-import Card from "../components/Card.astro";
-import Nav from "../components/nav.astro";
-import Hero from "../components/Hero.astro";
+import HeroProfessional from "../components/HeroProfessional.astro";
+import ProjectShowcase from "../components/ProjectShowcase.astro";
+import TechStack from "../components/TechStack.astro";
+import Experience from "../components/Experience.astro";
 ---
 
-<Layout title="Ivan Asdrubal Villegas Espinosa | Ingeniero en Sistemas">
+<Layout title="Ivan Asdrubal Villegas Espinosa | Ingeniero en Sistemas Computacionales">
   <div id="loader-overlay">
     <span class="loader-text">Bienvenido</span>
   </div>
   
-  <!-- Navbar moderna -->
+  <!-- Navbar moderna y fija -->
   <nav class="modern-navbar">
-    <div class="container">
+    <div class="nav-container">
       <div class="nav-brand">
-        <img src="/profile.jpg" alt="IV" class="profile-pic">
+        <span class="brand-text">IV</span>
       </div>
       <div class="nav-links">
-        <a href="#about">Sobre mí</a>
+        <a href="#hero">Inicio</a>
         <a href="#experience">Experiencia</a>
         <a href="#projects">Proyectos</a>
         <a href="#skills">Skills</a>
-        <a href="#contact">Contacta</a>
+        <a href="#contact">Contacto</a>
       </div>
-      <button class="theme-toggle">🌙</button>
+      <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
     </div>
   </nav>
 
   <main>
-    <!-- Hero Section Espacial -->
-    <section class="space-hero">
-      <div class="stars"></div>
+    <!-- Hero Section Profesional -->
+    <HeroProfessional />
+
+    <!-- Experiencia y Logros -->
+    <Experience />
+
+    <!-- Proyectos Desplegados -->
+    <ProjectShowcase />
+
+    <!-- Stack Tecnológico -->
+    <TechStack />
+
+    <!-- Contacto -->
+    <section id="contact" class="contact-section">
       <div class="container">
-        <div class="hero-content">
-          <h1>
-            👋 ¡Hola, soy <span class="gradient-text">Ivan!</span>
-          </h1>
-          <p class="hero-subtitle">
-            Futuro desarrollador de software senior. <em>Step by step, ¿Me ayudas?</em>
+        <div class="contact-content">
+          <h2 class="contact-title">¿Listo para colaborar?</h2>
+          <p class="contact-description">
+            Estoy disponible para proyectos freelance, colaboraciones y oportunidades full-time. 
+            Conversemos sobre cómo puedo ayudarte a construir tu próxima solución tecnológica.
           </p>
-          
-          <div class="enjoying-section">
-            <span class="enjoying-label">Enjoying</span>
-            <div class="tech-icons">
-              <span class="tech-icon html">HTML</span>
-              <span class="tech-icon js">JS</span>
-              <span class="tech-icon firebase">🔥</span>
-              <span class="tech-icon python">🐍</span>
-              <span class="tech-icon git">Git</span>
-              <span class="tech-icon css">CSS</span>
+          <div class="contact-methods">
+            <a href="mailto:ivan@ejemplo.com" class="contact-btn email">
+              <span class="btn-icon">📧</span>
+              <span>ivan@ejemplo.com</span>
+            </a>
+            <div class="social-links">
+              <a href="https://github.com/mael098" target="_blank" rel="noopener noreferrer" class="social-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                <span>GitHub</span>
+              </a>
+              <a href="https://www.linkedin.com/in/ivan-villegas-espinosa-08185923b/" target="_blank" rel="noopener noreferrer" class="social-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+                <span>LinkedIn</span>
+              </a>
             </div>
           </div>
-
-          <p class="hero-description">
-            Busco oportunidades prácticas donde aprender y aportar, para que el lema del proyecto no sea
-            <br><em>"esto no debería pasar..."</em>
-            <br>Y encontremos juntos soluciones creativas y eficaces.🚀
-          </p>
-
-          <div class="hero-buttons">
-            <a href="/cv.pdf" class="btn-primary">CV ⬇</a>
-            <a href="#about" class="btn-secondary">Conóceme</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Resto de secciones existentes -->
-    <section id="about" class="about">
-      <div class="container">
-        <h2>Sobre mí</h2>
-        <div class="about-content">
-          <p>
-            Como ingeniero en sistemas, me especializo en crear soluciones
-            tecnológicas robustas y escalables. Mi experiencia en desarrollo web
-            y arquitectura de sistemas me permite diseñar soluciones que no solo
-            funcionan, sino que también son mantenibles y eficientes.
-          </p>
-          <p>
-            Mi enfoque se centra en la calidad del código, la optimización de
-            rendimiento y la experiencia del usuario. Me apasiona resolver
-            problemas complejos y crear sistemas que realmente hagan la
-            diferencia.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Resto de tu código existente... -->
-    <section id="projects" class="projects">
-      <div class="container">
-        <h2>Proyectos Destacados</h2>
-        <div class="project-grid">
-          <Card
-            title="Sistema Inmobiliario"
-            body="Plataforma web moderna para gestión de propiedades inmobiliarias"
-            image="/cafe.avif"
-            techStack={["Next.js", "Tailwind CSS", "Node.js", "MongoDB"]}
-            href="/cafe"
-          />
-          <Card
-            title="Sistema de Gestión Empresarial"
-            body="Aplicación completa para gestión de recursos empresariales"
-            image="/proyecto2.avif"
-            techStack={["React", "Node.js", "PostgreSQL", "Docker"]}
-            href="/proyecto2"
-          />
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="skills">
-      <div class="container">
-        <h2>Especialidades</h2>
-        <div class="menu-board">
-          <div class="skill-category">
-            <h3>Desarrollo Web</h3>
-            <ul>
-              <li>React</li>
-              <li>Next.js</li>
-              <li>Astro</li>
-              <li>React Native</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Backend</h3>
-            <ul>
-              <li>Node.js</li>
-              <li>Express.js</li>
-              <li>Nest.js</li>
-              <li>GraphQL</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Bases de Datos</h3>
-            <ul>
-              <li>MongoDB</li>
-              <li>PostgreSQL</li>
-              <li>MySQL</li>
-              <li>Redis</li>
-            </ul>
-          </div>
-          <div class="skill-category">
-            <h3>Herramientas</h3>
-            <ul>
-              <li>Docker</li>
-              <li>Kubernetes</li>
-              <li>Git</li>
-              <li>CI/CD</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <div class="container">
-        <h2>¿Tomamos un café?</h2>
-        <p>Conversemos sobre tu próximo proyecto</p>
-        <div class="social-links">
-          <a href="https://github.com/mael098" class="button">GitHub</a>
-          <a href="https://www.linkedin.com/in/ivan-villegas-espinosa-08185923b/" class="button">LinkedIn</a>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">
+        © 2024 Ivan Asdrubal Villegas Espinosa. Desarrollado con
+        <span class="heart">❤️</span> usando Astro
+      </p>
+    </div>
+  </footer>
 </Layout>
 
 <script>

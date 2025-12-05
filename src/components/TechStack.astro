@@ -1,0 +1,526 @@
+---
+const skills = {
+  frontend: [
+    { name: "React", level: 90, icon: "⚛️" },
+    { name: "Next.js", level: 85, icon: "▲" },
+    { name: "TypeScript", level: 88, icon: "🔷" },
+    { name: "Astro", level: 80, icon: "🚀" },
+    { name: "Tailwind CSS", level: 92, icon: "🎨" },
+    { name: "Vue.js", level: 75, icon: "💚" }
+  ],
+  backend: [
+    { name: "Node.js", level: 90, icon: "🟢" },
+    { name: "Express", level: 88, icon: "🚂" },
+    { name: "NestJS", level: 82, icon: "🐈" },
+    { name: "Python", level: 80, icon: "🐍" },
+    { name: "GraphQL", level: 78, icon: "◐" },
+    { name: "REST APIs", level: 95, icon: "🔌" }
+  ],
+  database: [
+    { name: "PostgreSQL", level: 85, icon: "🐘" },
+    { name: "MongoDB", level: 88, icon: "🍃" },
+    { name: "Redis", level: 80, icon: "🔴" },
+    { name: "MySQL", level: 82, icon: "🐬" },
+    { name: "Prisma ORM", level: 85, icon: "⚡" }
+  ],
+  devops: [
+    { name: "Docker", level: 85, icon: "🐳" },
+    { name: "Kubernetes", level: 75, icon: "☸️" },
+    { name: "AWS", level: 78, icon: "☁️" },
+    { name: "CI/CD", level: 82, icon: "🔄" },
+    { name: "Git", level: 92, icon: "📦" },
+    { name: "Linux", level: 85, icon: "🐧" }
+  ],
+  tools: [
+    { name: "VS Code", level: 95, icon: "💻" },
+    { name: "Postman", level: 90, icon: "📮" },
+    { name: "Figma", level: 75, icon: "🎨" },
+    { name: "Jest", level: 80, icon: "🃏" },
+    { name: "Webpack", level: 78, icon: "📦" }
+  ]
+};
+
+const certifications = [
+  {
+    title: "AWS Certified Developer",
+    issuer: "Amazon Web Services",
+    year: "2024"
+  },
+  {
+    title: "Professional Scrum Master",
+    issuer: "Scrum.org",
+    year: "2023"
+  },
+  {
+    title: "React Advanced Patterns",
+    issuer: "Frontend Masters",
+    year: "2024"
+  }
+];
+---
+
+<section id="skills" class="skills-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">COMPETENCIAS</span>
+      <h2 class="section-title">Stack Tecnológico</h2>
+      <p class="section-description">
+        Dominio de tecnologías modernas y mejores prácticas para construir 
+        aplicaciones robustas, escalables y de alto rendimiento.
+      </p>
+    </div>
+
+    <div class="skills-container">
+      <!-- Frontend Development -->
+      <div class="skill-category">
+        <div class="category-header">
+          <div class="category-icon">💻</div>
+          <h3 class="category-title">Frontend Development</h3>
+        </div>
+        <div class="skills-grid">
+          {skills.frontend.map((skill) => (
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-icon">{skill.icon}</span>
+                <span class="skill-name">{skill.name}</span>
+              </div>
+              <div class="skill-bar-container">
+                <div class="skill-bar" style={`width: ${skill.level}%`}>
+                  <span class="skill-percentage">{skill.level}%</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Backend Development -->
+      <div class="skill-category">
+        <div class="category-header">
+          <div class="category-icon">⚙️</div>
+          <h3 class="category-title">Backend Development</h3>
+        </div>
+        <div class="skills-grid">
+          {skills.backend.map((skill) => (
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-icon">{skill.icon}</span>
+                <span class="skill-name">{skill.name}</span>
+              </div>
+              <div class="skill-bar-container">
+                <div class="skill-bar" style={`width: ${skill.level}%`}>
+                  <span class="skill-percentage">{skill.level}%</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Database & Storage -->
+      <div class="skill-category">
+        <div class="category-header">
+          <div class="category-icon">🗄️</div>
+          <h3 class="category-title">Database & Storage</h3>
+        </div>
+        <div class="skills-grid">
+          {skills.database.map((skill) => (
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-icon">{skill.icon}</span>
+                <span class="skill-name">{skill.name}</span>
+              </div>
+              <div class="skill-bar-container">
+                <div class="skill-bar" style={`width: ${skill.level}%`}>
+                  <span class="skill-percentage">{skill.level}%</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- DevOps & Cloud -->
+      <div class="skill-category">
+        <div class="category-header">
+          <div class="category-icon">☁️</div>
+          <h3 class="category-title">DevOps & Cloud</h3>
+        </div>
+        <div class="skills-grid">
+          {skills.devops.map((skill) => (
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-icon">{skill.icon}</span>
+                <span class="skill-name">{skill.name}</span>
+              </div>
+              <div class="skill-bar-container">
+                <div class="skill-bar" style={`width: ${skill.level}%`}>
+                  <span class="skill-percentage">{skill.level}%</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Tools & Others -->
+      <div class="skill-category">
+        <div class="category-header">
+          <div class="category-icon">🛠️</div>
+          <h3 class="category-title">Tools & Testing</h3>
+        </div>
+        <div class="skills-grid">
+          {skills.tools.map((skill) => (
+            <div class="skill-item">
+              <div class="skill-header">
+                <span class="skill-icon">{skill.icon}</span>
+                <span class="skill-name">{skill.name}</span>
+              </div>
+              <div class="skill-bar-container">
+                <div class="skill-bar" style={`width: ${skill.level}%`}>
+                  <span class="skill-percentage">{skill.level}%</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Certificaciones -->
+    <div class="certifications-section">
+      <h3 class="certifications-title">
+        <span class="cert-icon">🏆</span>
+        Certificaciones & Cursos
+      </h3>
+      <div class="certifications-grid">
+        {certifications.map((cert) => (
+          <div class="certification-card">
+            <div class="cert-content">
+              <h4 class="cert-title">{cert.title}</h4>
+              <p class="cert-issuer">{cert.issuer}</p>
+              <span class="cert-year">{cert.year}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills-section {
+    padding: 120px 0;
+    background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skills-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(244, 162, 97, 0.15), transparent 70%);
+    border-radius: 50%;
+    filter: blur(80px);
+  }
+
+  .skills-section::after {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(231, 111, 81, 0.15), transparent 70%);
+    border-radius: 50%;
+    filter: blur(80px);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  .section-tag {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(244, 162, 97, 0.1);
+    border: 1px solid rgba(244, 162, 97, 0.3);
+    border-radius: 50px;
+    color: #f4a261;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffffff 0%, #f4a261 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 24px;
+    line-height: 1.1;
+  }
+
+  .section-description {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .skills-container {
+    display: grid;
+    gap: 48px;
+    margin-bottom: 80px;
+  }
+
+  .skill-category {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 32px;
+    transition: all 0.3s ease;
+  }
+
+  .skill-category:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(244, 162, 97, 0.2);
+    transform: translateY(-4px);
+  }
+
+  .category-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .category-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(244, 162, 97, 0.2), rgba(231, 111, 81, 0.2));
+    border: 1px solid rgba(244, 162, 97, 0.3);
+    border-radius: 12px;
+    font-size: 24px;
+  }
+
+  .category-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .skill-item {
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+
+  .skill-item:hover {
+    background: rgba(0, 0, 0, 0.4);
+    transform: translateX(4px);
+  }
+
+  .skill-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .skill-icon {
+    font-size: 20px;
+  }
+
+  .skill-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+  }
+
+  .skill-bar-container {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .skill-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #f4a261, #e76f51);
+    border-radius: 50px;
+    position: relative;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: skillLoad 1.5s ease-out;
+  }
+
+  @keyframes skillLoad {
+    from {
+      width: 0;
+    }
+  }
+
+  .skill-percentage {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  }
+
+  /* Certificaciones */
+  .certifications-section {
+    margin-top: 80px;
+    padding-top: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .certifications-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .cert-icon {
+    font-size: 2rem;
+  }
+
+  .certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .certification-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(244, 162, 97, 0.2);
+    border-radius: 16px;
+    padding: 28px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .certification-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #f4a261, #e76f51);
+  }
+
+  .certification-card:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(244, 162, 97, 0.4);
+    transform: translateY(-4px);
+  }
+
+  .cert-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .cert-title {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .cert-issuer {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 12px;
+  }
+
+  .cert-year {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(244, 162, 97, 0.2);
+    border: 1px solid rgba(244, 162, 97, 0.3);
+    border-radius: 50px;
+    color: #f4a261;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  /* Responsive */
+  @media (max-width: 968px) {
+    .skills-section {
+      padding: 80px 0;
+    }
+
+    .section-header {
+      margin-bottom: 60px;
+    }
+
+    .skills-container {
+      gap: 32px;
+      margin-bottom: 60px;
+    }
+
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .certifications-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .skill-category {
+      padding: 24px;
+    }
+
+    .category-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .certifications-title {
+      font-size: 1.5rem;
+      flex-direction: column;
+    }
+  }
+</style>
