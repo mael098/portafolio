@@ -245,6 +245,46 @@
       padding: 0 1rem;
     }
   }
+
+  /* Modo Claro */
+  html.light-mode .hero {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  }
+
+  html.light-mode .hero-text h1 {
+    background: linear-gradient(90deg, var(--accent), #0a0a0a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  html.light-mode .highlight {
+    background: linear-gradient(45deg, var(--accent), var(--accent-dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  html.light-mode .subtitle {
+    color: rgba(10, 10, 10, 0.9) !important;
+  }
+
+  html.light-mode .tagline {
+    color: rgba(10, 10, 10, 0.8) !important;
+  }
+
+  html.light-mode .btn-secondary {
+    color: #0a0a0a;
+    border-color: var(--accent);
+  }
+
+  html.light-mode .btn-secondary:hover {
+    color: white;
+  }
+
+  html.light-mode .profile-image {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
 </style>
 
 

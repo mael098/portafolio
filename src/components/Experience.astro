@@ -1,62 +1,94 @@
 ---
 const experience = [
   {
-    role: "Desarrollador Fullstack",
-    company: "Tech Solutions",
-    period: "2023 - Presente",
-    description: "Desarrollo de aplicaciones web escalables con React, Node.js y AWS. Implementación de arquitecturas de microservicios y optimización de rendimiento.",
+    role: "Desarrollador Full Stack",
+    company: "Proyectos Independientes / Académicos",
+    period: "2025 - Presente",
+    description:
+      "Diseño y desarrollo de aplicaciones web completas, desde el frontend hasta la lógica backend y bases de datos. Enfoque en estabilidad, buena arquitectura y experiencia de usuario.",
     achievements: [
-      "Reducción del 40% en tiempo de carga mediante optimización de código",
-      "Implementación de CI/CD pipeline reduciendo deployment time en 60%",
-      "Liderazgo en migración de monolito a microservicios"
+      "Desarrollo de plataformas web funcionales en producción usando Next.js y Prisma",
+      "Implementación de APIs con validaciones, manejo de errores y estructura escalable",
+      "Optimización de interfaces enfocadas en usabilidad y diseño responsivo",
+      "Experiencia en despliegue y mantenimiento de aplicaciones web"
     ],
-    technologies: ["React", "Node.js", "PostgreSQL", "Docker", "AWS"]
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Node.js",
+      "Prisma",
+      "TailwindCSS",
+      "PostgreSQL",
+      "Docker"
+    ]
   },
   {
-    role: "Desarrollador Backend",
-    company: "Innovation Labs",
-    period: "2022 - 2023",
-    description: "Diseño e implementación de APIs RESTful robustas y sistemas de autenticación seguros. Gestión de bases de datos y optimización de consultas.",
+    role: "Desarrollador de Sistemas y Plataformas Digitales",
+    company: "Servicio Social / Concursos de Innovación",
+    period: "2025",
+    description:
+      "Participación en proyectos tecnológicos orientados a la gestión de información, innovación social y apoyo a la toma de decisiones.",
     achievements: [
-      "Diseño de API usada por 50K+ usuarios diarios",
-      "Implementación de sistema de caché reduciendo carga DB en 70%",
-      "Desarrollo de herramientas internas que aumentaron productividad 35%"
+      "Desarrollo de una plataforma geográfica digital para gestión urbana (Geotampico)",
+      "Diseño de prototipos funcionales presentados ante jurados académicos e industriales",
+      "Trabajo colaborativo en equipos multidisciplinarios",
+      "Aplicación de principios de arquitectura limpia y modular"
     ],
-    technologies: ["Node.js", "Express", "MongoDB", "Redis"]
+    technologies: [
+      "JavaScript",
+      "Next.js",
+      "GIS",
+      "Bases de Datos",
+      "Git",
+      "Linux"
+    ]
   }
 ];
+
 
 const education = [
   {
     degree: "Ingeniería en Sistemas Computacionales",
-    institution: "Universidad Tecnológica",
-    period: "2019 - 2024",
-    highlight: "Especialización en Arquitectura de Software"
+    institution: "Universidad instituto Tecnológico de Altamira",
+    period: "2022 - cursando",
+    highlight: "Promedio actual: 9.2/10 reconociminetos por dar un taller de introducción ala web"
+  },{
+    degree: "Técnico en Programación",
+    institution: "CBTIS 105",
+    period: "2018 - 2022",
+    highlight: ""
   }
 ];
 
 const achievements = [
   {
-    icon: "🏆",
-    title: "Hackathon Winner",
-    description: "Primer lugar en competencia de desarrollo con 200+ participantes"
+    icon: "💻",
+    title: "Full Stack Projects Delivered",
+    description: "Desarrollo de aplicaciones web funcionales usando Next.js, Prisma y Tailwind, desde la idea hasta producción"
   },
   {
-    icon: "⭐",
-    title: "Open Source Contributor",
-    description: "Contribuciones activas a proyectos con 10K+ estrellas en GitHub"
+    icon: "🧠",
+    title: "Problem-Solving Developer",
+    description: "Resolución de problemas reales en integración de APIs, manejo de errores y arquitectura frontend"
   },
   {
-    icon: "🎯",
-    title: "Performance Expert",
-    description: "Optimización de aplicaciones logrando mejoras de 60% en rendimiento"
+    icon: "🗺️",
+    title: "Geospatial Platform Development",
+    description: "Creación de una plataforma geográfica digital para gestión urbana y toma de decisiones institucionales"
   },
   {
     icon: "🚀",
-    title: "Innovation Leader",
-    description: "Implementación de nuevas tecnologías mejorando workflows del equipo"
+    title: "Innovation & Prototyping",
+    description: "Diseño y presentación de prototipos funcionales en concursos de innovación y proyectos académicos"
+  },
+  {
+    icon: "📈",
+    title: "User-Focused Applications",
+    description: "Desarrollo de plataformas enfocadas en usabilidad, diseño moderno y experiencia de usuario"
   }
 ];
+
 ---
 
 <section id="experience" class="experience-section">
@@ -197,6 +229,13 @@ const achievements = [
     background-clip: text;
     margin-bottom: 24px;
     line-height: 1.1;
+  }
+
+  html.light-mode .section-title {
+    background: linear-gradient(135deg, #0a0a0a 0%, #e76f51 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .section-description {
@@ -358,6 +397,10 @@ const achievements = [
     line-height: 1.6;
   }
 
+  html.light-mode .achievement-item {
+    color: rgba(10, 10, 10, 0.85);
+  }
+
   .achievement-icon {
     color: #22c55e;
     font-weight: 700;
@@ -401,6 +444,10 @@ const achievements = [
     display: flex;
     align-items: center;
     gap: 12px;
+  }
+
+  html.light-mode .subsection-title {
+    color: #0a0a0a;
   }
 
   .title-icon {
@@ -471,6 +518,12 @@ const achievements = [
     font-weight: 600;
   }
 
+  html.light-mode .edu-highlight {
+    background: rgba(231, 111, 81, 0.15);
+    border-color: rgba(231, 111, 81, 0.4);
+    color: rgba(10, 10, 10, 0.9);
+  }
+
   .highlight-icon {
     font-size: 1rem;
   }
@@ -509,10 +562,18 @@ const achievements = [
     margin-bottom: 12px;
   }
 
+  html.light-mode .achievement-title {
+    color: #0a0a0a;
+  }
+
   .achievement-description {
     font-size: 0.95rem;
     color: rgba(255, 255, 255, 0.7);
     line-height: 1.6;
+  }
+
+  html.light-mode .achievement-description {
+    color: rgba(10, 10, 10, 0.75);
   }
 
   /* Responsive */
@@ -787,5 +848,106 @@ const achievements = [
     .achievement-card {
       font-size: 0.75rem;
     }
+  }
+
+  /* Light Mode Styles */
+  html.light-mode .experience-section {
+    background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+  }
+
+  html.light-mode .section-description {
+    color: rgba(10, 10, 10, 0.8) !important;
+  }
+
+  html.light-mode .section-tag {
+    background: rgba(231, 111, 81, 0.15);
+    border-color: rgba(231, 111, 81, 0.4);
+    color: #e76f51;
+  }
+
+  html.light-mode .timeline-item::after {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  html.light-mode .timeline-marker {
+    background: rgba(0, 0, 0, 0.03);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+  }
+
+  html.light-mode .marker-dot {
+    background: linear-gradient(135deg, #e76f51, #f4a261);
+  }
+
+  html.light-mode .timeline-content {
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+  }
+
+  html.light-mode .timeline-content:hover {
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(231, 111, 81, 0.3);
+  }
+
+  html.light-mode .job-role {
+    color: #0a0a0a !important;
+  }
+
+  html.light-mode .job-company {
+    color: #e76f51 !important;
+  }
+
+  html.light-mode .job-period {
+    background: rgba(231, 111, 81, 0.15);
+    border-color: rgba(231, 111, 81, 0.4);
+    color: #d45d44 !important;
+    font-weight: 700;
+  }
+
+  html.light-mode .job-description {
+    color: rgba(10, 10, 10, 0.8) !important;
+  }
+
+  html.light-mode .achievements-title {
+    color: rgba(10, 10, 10, 0.7) !important;
+  }
+
+  html.light-mode .achievement-card {
+    background: rgba(231, 111, 81, 0.1);
+    border-color: rgba(231, 111, 81, 0.25);
+  }
+
+  html.light-mode .tech-tag {
+    background: rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.2);
+    color: rgba(10, 10, 10, 0.85) !important;
+  }
+
+  html.light-mode .education-card {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  html.light-mode .education-card:hover {
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(231, 111, 81, 0.3);
+  }
+
+  html.light-mode .edu-degree {
+    color: #0a0a0a !important;
+  }
+
+  html.light-mode .edu-institution {
+    color: #e76f51 !important;
+  }
+
+  html.light-mode .edu-period {
+    color: rgba(10, 10, 10, 0.7) !important;
+  }
+
+  html.light-mode .timeline-content {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   }
 </style>

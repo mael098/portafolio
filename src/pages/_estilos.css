@@ -1,19 +1,41 @@
 /* Importar fuentes */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
-/* Variables de color */
+/* Variables de color - Modo Oscuro (Default) */
 :root {
   --primary: #0a0a0a;
   --secondary: #1a1a1a;
   --accent: #f4a261;
   --accent-dark: #e76f51;
   --accent-light: #ffe5b4;
+  --text-primary: #f5f5f5;
+  --text-secondary: #b0b0b0;
   --text-light: #f5f5f5;
   --text-dark: #333333;
   --background: #0a0a0a;
   --background-alt: #1a1a1a;
+  --background-card: rgba(255, 255, 255, 0.02);
+  --border-color: rgba(255, 255, 255, 0.1);
   --shadow: 0 4px 24px rgba(0,0,0,0.3);
   --radius: 16px;
+}
+
+/* Variables de color - Modo Claro */
+html.light-mode {
+  --primary: #ffffff;
+  --secondary: #f8f9fa;
+  --accent: #e76f51;
+  --accent-dark: #d45d44;
+  --accent-light: #f4a261;
+  --text-primary: #0a0a0a;
+  --text-secondary: #495057;
+  --text-light: #0a0a0a;
+  --text-dark: #f5f5f5;
+  --background: #ffffff;
+  --background-alt: #f8f9fa;
+  --background-card: rgba(0, 0, 0, 0.04);
+  --border-color: rgba(0, 0, 0, 0.12);
+  --shadow: 0 4px 24px rgba(0,0,0,0.1);
 }
 
 /* Reset y estilos base */
@@ -30,9 +52,10 @@ html {
 body {
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
-  color: var(--text-light);
+  color: var(--text-primary);
   background-color: var(--background);
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Loader */
@@ -48,6 +71,10 @@ body {
   justify-content: center;
   z-index: 9999;
   transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+html.light-mode #loader-overlay {
+  background: linear-gradient(135deg, #ffffff, #f5f5f5);
 }
 
 #loader-overlay.hide {
@@ -87,13 +114,24 @@ body {
   border-radius: 60px;
   padding: 16px 32px;
   z-index: 1000;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
   transition: all 0.3s ease;
+}
+
+html.light-mode .modern-navbar {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .modern-navbar:hover {
   background: rgba(0, 0, 0, 0.9);
   border-color: rgba(244, 162, 97, 0.3);
+}
+
+html.light-mode .modern-navbar:hover {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(231, 111, 81, 0.3);
 }
 
 .nav-container {
@@ -132,6 +170,10 @@ body {
   position: relative;
 }
 
+html.light-mode .nav-links a {
+  color: rgba(10, 10, 10, 0.85);
+}
+
 .nav-links a::after {
   content: '';
   position: absolute;
@@ -145,6 +187,10 @@ body {
 
 .nav-links a:hover {
   color: #ffffff;
+}
+
+html.light-mode .nav-links a:hover {
+  color: #0a0a0a;
 }
 
 .nav-links a:hover::after {
@@ -166,10 +212,21 @@ body {
   transition: all 0.3s ease;
 }
 
+html.light-mode .theme-toggle {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #1a1a1a;
+}
+
 .theme-toggle:hover {
   background: rgba(244, 162, 97, 0.2);
   border-color: rgba(244, 162, 97, 0.5);
   transform: rotate(20deg);
+}
+
+html.light-mode .theme-toggle:hover {
+  background: rgba(231, 111, 81, 0.15);
+  border-color: rgba(231, 111, 81, 0.3);
 }
 
 /* Contenedor global */
@@ -189,6 +246,11 @@ section {
   padding: 120px 0;
   background: linear-gradient(180deg, #1a1a1a 0%, #0a0a0a 100%);
   position: relative;
+  transition: background 0.3s ease;
+}
+
+html.light-mode .contact-section {
+  background: linear-gradient(180deg, #f5f5f5 0%, #ffffff 100%);
 }
 
 .contact-section::before {
@@ -199,6 +261,10 @@ section {
   right: 0;
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(244, 162, 97, 0.5), transparent);
+}
+
+html.light-mode .contact-section::before {
+  background: linear-gradient(90deg, transparent, rgba(231, 111, 81, 0.3), transparent);
 }
 
 .contact-content {
@@ -223,6 +289,11 @@ section {
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.8;
   margin-bottom: 48px;
+  transition: color 0.3s ease;
+}
+
+html.light-mode .contact-description {
+  color: rgba(10, 10, 10, 0.75);
 }
 
 .contact-methods {
@@ -278,10 +349,21 @@ section {
   transition: all 0.3s ease;
 }
 
+html.light-mode .social-btn {
+  background: rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: rgba(10, 10, 10, 0.9);
+}
+
 .social-btn:hover {
   background: rgba(244, 162, 97, 0.1);
   border-color: rgba(244, 162, 97, 0.5);
   transform: translateY(-2px);
+}
+
+html.light-mode .social-btn:hover {
+  background: rgba(231, 111, 81, 0.1);
+  border-color: rgba(231, 111, 81, 0.4);
 }
 
 .social-btn svg {
@@ -294,12 +376,23 @@ section {
   padding: 40px 0;
   background: #0a0a0a;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+html.light-mode .footer {
+  background: #ffffff;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .footer-text {
   text-align: center;
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+html.light-mode .footer-text {
+  color: rgba(10, 10, 10, 0.6);
 }
 
 .heart {
@@ -494,4 +587,9 @@ h2 {
   font-weight: 800;
   letter-spacing: 1px;
   text-align: center;
+  transition: color 0.3s ease;
+}
+
+html.light-mode h2 {
+  color: #0a0a0a;
 }

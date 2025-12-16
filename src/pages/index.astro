@@ -8,6 +8,18 @@ import Experience from "../components/Experience.astro";
 ---
 
 <Layout title="Ivan Asdrubal Villegas Espinosa | Ingeniero en Sistemas Computacionales">
+  <!-- Script para prevenir parpadeo del tema -->
+  <script is:inline>
+    (function() {
+      const savedTheme = localStorage.getItem('theme');
+      const systemTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      const theme = savedTheme || systemTheme;
+      if (theme === 'light') {
+        document.documentElement.classList.add('light-mode');
+      }
+    })();
+  </script>
+
   <div id="loader-overlay">
     <span class="loader-text">Bienvenido</span>
   </div>
@@ -104,6 +116,46 @@ import Experience from "../components/Experience.astro";
         // Marca que ya se mostró el loader
         localStorage.setItem('loaderShown', 'true');
       }, 2000);
+    }
+
+    // Theme Toggle Functionality
+    const themeToggle = document.querySelector('.theme-toggle');
+    const html = document.documentElement;
+    
+    // Verifica el tema guardado o usa el tema del sistema
+    const savedTheme = localStorage.getItem('theme');
+    const systemTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    const currentTheme = savedTheme || systemTheme;
+    
+    // Aplica el tema inicial
+    if (currentTheme === 'light') {
+      html.classList.add('light-mode');
+      if (themeToggle) themeToggle.textContent = '☀️';
+    } else {
+      html.classList.remove('light-mode');
+      if (themeToggle) themeToggle.textContent = '🌙';
+    }
+    
+    // Event listener para el botón de tema
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        html.classList.toggle('light-mode');
+        const isLight = html.classList.contains('light-mode');
+        
+        // Actualiza el icono
+        themeToggle.textContent = isLight ? '☀️' : '🌙';
+        
+        // Guarda la preferencia
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        
+        // Animación del botón
+        if (themeToggle instanceof HTMLElement) {
+          themeToggle.style.transform = 'rotate(360deg) scale(1.2)';
+          setTimeout(() => {
+            themeToggle.style.transform = '';
+          }, 300);
+        }
+      });
     }
   });
 </script>
