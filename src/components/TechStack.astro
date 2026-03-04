@@ -1,771 +1,117 @@
 ---
-const skills = {
-  frontend: [
-    { name: "React", level: 90, icon: "⚛️" },
-    { name: "Next.js", level: 85, icon: "▲" },
-    { name: "TypeScript", level: 88, icon: "🔷" },
-    { name: "Astro", level: 80, icon: "🚀" },
-    { name: "Tailwind CSS", level: 92, icon: "🎨" },
-    { name: "Vue.js", level: 75, icon: "💚" }
-  ],
-  backend: [
-    { name: "Node.js", level: 90, icon: "🟢" },
-    { name: "Express", level: 88, icon: "🚂" },
-    { name: "NestJS", level: 82, icon: "🐈" },
-    { name: "Python", level: 80, icon: "🐍" },
-    { name: "GraphQL", level: 78, icon: "◐" },
-    { name: "REST APIs", level: 95, icon: "🔌" }
-  ],
-  database: [
-    { name: "PostgreSQL", level: 85, icon: "🐘" },
-    { name: "MongoDB", level: 88, icon: "🍃" },
-    { name: "Redis", level: 80, icon: "🔴" },
-    { name: "MySQL", level: 82, icon: "🐬" },
-    { name: "Prisma ORM", level: 85, icon: "⚡" }
-  ],
-  devops: [
-    { name: "Docker", level: 85, icon: "🐳" },
-    { name: "Kubernetes", level: 75, icon: "☸️" },
-    { name: "AWS", level: 78, icon: "☁️" },
-    { name: "CI/CD", level: 82, icon: "🔄" },
-    { name: "Git", level: 92, icon: "📦" },
-    { name: "Linux", level: 85, icon: "🐧" }
-  ],
-  tools: [
-    { name: "VS Code", level: 95, icon: "💻" },
-    { name: "Postman", level: 90, icon: "📮" },
-    { name: "Figma", level: 75, icon: "🎨" },
-    { name: "Jest", level: 80, icon: "🃏" },
-    { name: "Webpack", level: 78, icon: "📦" }
-  ]
-};
-
-const certifications = [
+const groups = [
   {
-    title: "AWS Certified Developer",
-    issuer: "Amazon Web Services",
-    year: "2024"
+    title: 'Frontend',
+    items: ['React', 'Next.js', 'Astro', 'TypeScript', 'Tailwind CSS']
   },
   {
-    title: "Professional Scrum Master",
-    issuer: "Scrum.org",
-    year: "2023"
+    title: 'Backend',
+    items: ['Node.js', 'Express', 'REST APIs', 'JWT', 'Prisma']
   },
   {
-    title: "React Advanced Patterns",
-    issuer: "Frontend Masters",
-    year: "2024"
+    title: 'Base de datos',
+    items: ['PostgreSQL', 'MySQL', 'MongoDB', 'Redis']
+  },
+  {
+    title: 'Dev workflow',
+    items: ['Git', 'Docker', 'Linux', 'Postman', 'VS Code']
   }
 ];
 ---
 
 <section id="skills" class="skills-section">
   <div class="container">
-    <div class="section-header">
-      <span class="section-tag">COMPETENCIAS</span>
-      <h2 class="section-title">Stack Tecnológico</h2>
+    <header class="section-header">
+      <span class="section-tag">TECNOLOGÍAS</span>
+      <h2 class="section-title">Stack técnico</h2>
       <p class="section-description">
-        Dominio de tecnologías modernas y mejores prácticas para construir 
-        aplicaciones robustas, escalables y de alto rendimiento.
+        Herramientas y tecnologías que utilizo para diseñar, desarrollar y desplegar aplicaciones web robustas.
       </p>
-    </div>
+    </header>
 
-    <div class="skills-container">
-      <!-- Frontend Development -->
-      <div class="skill-category">
-        <div class="category-header">
-          <div class="category-icon">💻</div>
-          <h3 class="category-title">Frontend Development</h3>
-        </div>
-        <div class="skills-grid">
-          {skills.frontend.map((skill) => (
-            <div class="skill-item">
-              <div class="skill-header">
-                <span class="skill-icon">{skill.icon}</span>
-                <span class="skill-name">{skill.name}</span>
-              </div>
-              <div class="skill-bar-container">
-                <div class="skill-bar" style={`width: ${skill.level}%`}>
-                  <span class="skill-percentage">{skill.level}%</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <!-- Backend Development -->
-      <div class="skill-category">
-        <div class="category-header">
-          <div class="category-icon">⚙️</div>
-          <h3 class="category-title">Backend Development</h3>
-        </div>
-        <div class="skills-grid">
-          {skills.backend.map((skill) => (
-            <div class="skill-item">
-              <div class="skill-header">
-                <span class="skill-icon">{skill.icon}</span>
-                <span class="skill-name">{skill.name}</span>
-              </div>
-              <div class="skill-bar-container">
-                <div class="skill-bar" style={`width: ${skill.level}%`}>
-                  <span class="skill-percentage">{skill.level}%</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <!-- Database & Storage -->
-      <div class="skill-category">
-        <div class="category-header">
-          <div class="category-icon">🗄️</div>
-          <h3 class="category-title">Database & Storage</h3>
-        </div>
-        <div class="skills-grid">
-          {skills.database.map((skill) => (
-            <div class="skill-item">
-              <div class="skill-header">
-                <span class="skill-icon">{skill.icon}</span>
-                <span class="skill-name">{skill.name}</span>
-              </div>
-              <div class="skill-bar-container">
-                <div class="skill-bar" style={`width: ${skill.level}%`}>
-                  <span class="skill-percentage">{skill.level}%</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <!-- DevOps & Cloud -->
-      <div class="skill-category">
-        <div class="category-header">
-          <div class="category-icon">☁️</div>
-          <h3 class="category-title">DevOps & Cloud</h3>
-        </div>
-        <div class="skills-grid">
-          {skills.devops.map((skill) => (
-            <div class="skill-item">
-              <div class="skill-header">
-                <span class="skill-icon">{skill.icon}</span>
-                <span class="skill-name">{skill.name}</span>
-              </div>
-              <div class="skill-bar-container">
-                <div class="skill-bar" style={`width: ${skill.level}%`}>
-                  <span class="skill-percentage">{skill.level}%</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <!-- Tools & Others -->
-      <div class="skill-category">
-        <div class="category-header">
-          <div class="category-icon">🛠️</div>
-          <h3 class="category-title">Tools & Testing</h3>
-        </div>
-        <div class="skills-grid">
-          {skills.tools.map((skill) => (
-            <div class="skill-item">
-              <div class="skill-header">
-                <span class="skill-icon">{skill.icon}</span>
-                <span class="skill-name">{skill.name}</span>
-              </div>
-              <div class="skill-bar-container">
-                <div class="skill-bar" style={`width: ${skill.level}%`}>
-                  <span class="skill-percentage">{skill.level}%</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-
-    <!-- Certificaciones -->
-    <!-- <div class="certifications-section">
-      <h3 class="certifications-title">
-        <span class="cert-icon">🏆</span>
-        Certificaciones & Cursos
-      </h3>
-      <div class="certifications-grid">
-        {certifications.map((cert) => (
-          <div class="certification-card">
-            <div class="cert-content">
-              <h4 class="cert-title">{cert.title}</h4>
-              <p class="cert-issuer">{cert.issuer}</p>
-              <span class="cert-year">{cert.year}</span>
-            </div>
-          </div>
-        ))}
-      </div> -->
+    <div class="stack-grid">
+      {groups.map((group) => (
+        <article class="stack-card">
+          <h3>{group.title}</h3>
+          <ul>
+            {group.items.map((item) => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </article>
+      ))}
     </div>
   </div>
 </section>
 
 <style>
   .skills-section {
-    padding: 120px 0;
-    background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .skills-section::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -10%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(244, 162, 97, 0.15), transparent 70%);
-    border-radius: 50%;
-    filter: blur(80px);
-  }
-
-  .skills-section::after {
-    content: '';
-    position: absolute;
-    bottom: -50%;
-    left: -10%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(231, 111, 81, 0.15), transparent 70%);
-    border-radius: 50%;
-    filter: blur(80px);
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-    position: relative;
-    z-index: 1;
+    padding: 110px 0;
+    background: linear-gradient(180deg, var(--background) 0%, var(--secondary) 100%);
   }
 
   .section-header {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 42px;
   }
 
   .section-tag {
     display: inline-block;
-    padding: 8px 16px;
-    background: rgba(244, 162, 97, 0.1);
-    border: 1px solid rgba(244, 162, 97, 0.3);
-    border-radius: 50px;
-    color: #f4a261;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(244, 162, 97, 0.35);
+    color: var(--accent);
     font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    margin-bottom: 16px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
   }
 
   .section-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 800;
-    background: linear-gradient(135deg, #ffffff 0%, #f4a261 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 24px;
-    line-height: 1.1;
+    font-size: clamp(1.85rem, 4vw, 3rem);
+    margin-bottom: 12px;
   }
 
   .section-description {
-    font-size: 1.125rem;
-    color: rgba(255, 255, 255, 0.7);
-    max-width: 600px;
+    color: var(--text-secondary);
+    max-width: 66ch;
     margin: 0 auto;
-    line-height: 1.6;
   }
 
-  .skills-container {
+  .stack-grid {
     display: grid;
-    gap: 48px;
-    margin-bottom: 80px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
   }
 
-  .skill-category {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 20px;
-    padding: 32px;
-    transition: all 0.3s ease;
-  }
-
-  .skill-category:hover {
-    background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(244, 162, 97, 0.2);
-    transform: translateY(-4px);
-  }
-
-  .category-header {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 32px;
-  }
-
-  .category-icon {
-    width: 56px;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, rgba(244, 162, 97, 0.2), rgba(231, 111, 81, 0.2));
-    border: 1px solid rgba(244, 162, 97, 0.3);
-    border-radius: 12px;
-    font-size: 24px;
-  }
-
-  .category-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #ffffff;
-  }
-
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-  }
-
-  .skill-item {
-    padding: 16px;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 12px;
-    transition: all 0.3s ease;
-  }
-
-  .skill-item:hover {
-    background: rgba(0, 0, 0, 0.4);
-    transform: translateX(4px);
-  }
-
-  .skill-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 12px;
-  }
-
-  .skill-icon {
-    font-size: 20px;
-  }
-
-  .skill-name {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: #ffffff;
-  }
-
-  .skill-bar-container {
-    height: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 50px;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .skill-bar {
-    height: 100%;
-    background: linear-gradient(90deg, #f4a261, #e76f51);
-    border-radius: 50px;
-    position: relative;
-    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
-    animation: skillLoad 1.5s ease-out;
-  }
-
-  @keyframes skillLoad {
-    from {
-      width: 0;
-    }
-  }
-
-  .skill-percentage {
-    position: absolute;
-    right: 8px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 0.7rem;
-    font-weight: 700;
-    color: #ffffff;
-    text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
-  }
-
-  /* Certificaciones */
-  .certifications-section {
-    margin-top: 80px;
-    padding-top: 60px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .certifications-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 40px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    justify-content: center;
-  }
-
-  .cert-icon {
-    font-size: 2rem;
-  }
-
-  .certifications-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-  }
-
-  .certification-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(244, 162, 97, 0.2);
+  .stack-card {
+    border: 1px solid var(--border-color);
     border-radius: 16px;
-    padding: 28px;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    padding: 20px;
+    background: var(--background-card);
   }
 
-  .certification-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background: linear-gradient(180deg, #f4a261, #e76f51);
+  .stack-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--text-primary);
   }
 
-  .certification-card:hover {
-    background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(244, 162, 97, 0.4);
-    transform: translateY(-4px);
+  .stack-card ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text-secondary);
+    display: grid;
+    gap: 8px;
   }
 
-  .cert-content {
-    position: relative;
-    z-index: 1;
-  }
-
-  .cert-title {
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 8px;
-    line-height: 1.3;
-  }
-
-  .cert-issuer {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 12px;
-  }
-
-  .cert-year {
-    display: inline-block;
-    padding: 4px 12px;
-    background: rgba(244, 162, 97, 0.2);
-    border: 1px solid rgba(244, 162, 97, 0.3);
-    border-radius: 50px;
-    color: #f4a261;
-    font-size: 0.75rem;
-    font-weight: 600;
-  }
-
-  /* Responsive */
-  @media (max-width: 1024px) {
+  @media (max-width: 760px) {
     .skills-section {
-      padding: 100px 0 80px;
+      padding: 80px 0;
     }
 
-    .section-title {
-      font-size: clamp(2rem, 4vw, 3rem);
-    }
-
-    .skills-grid {
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    }
-  }
-
-  @media (max-width: 968px) {
-    .skills-section {
-      padding: 80px 0 60px;
-    }
-
-    .container {
-      padding: 0 20px;
-    }
-
-    .section-header {
-      margin-bottom: 50px;
-    }
-
-    .section-tag {
-      font-size: 0.7rem;
-      padding: 6px 14px;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      margin-bottom: 16px;
-    }
-
-    .section-description {
-      font-size: 1rem;
-    }
-
-    .skills-container {
-      gap: 24px;
-      margin-bottom: 50px;
-    }
-
-    .skills-grid {
+    .stack-grid {
       grid-template-columns: 1fr;
-      gap: 20px;
     }
-
-    .skill-category {
-      padding: 28px;
-    }
-
-    .certifications-grid {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .skills-section {
-      padding: 60px 0 40px;
-    }
-
-    .container {
-      padding: 0 16px;
-    }
-
-    .section-header {
-      margin-bottom: 40px;
-    }
-
-    .section-tag {
-      padding: 6px 12px;
-      font-size: 0.65rem;
-      letter-spacing: 1.5px;
-    }
-
-    .section-title {
-      font-size: 1.75rem;
-      margin-bottom: 12px;
-    }
-
-    .section-description {
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .skills-container {
-      gap: 16px;
-      margin-bottom: 40px;
-    }
-
-    .skills-grid {
-      gap: 16px;
-    }
-
-    .skill-category {
-      padding: 20px;
-      border-radius: 16px;
-    }
-
-    .category-header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-
-    .category-icon {
-      font-size: 1.75rem;
-    }
-
-    .category-name {
-      font-size: 1.125rem;
-    }
-
-    .skills-list {
-      gap: 12px;
-    }
-
-    .skill-item {
-      margin-bottom: 12px;
-    }
-
-    .skill-info {
-      margin-bottom: 8px;
-    }
-
-    .skill-name {
-      font-size: 0.875rem;
-    }
-
-    .skill-level {
-      font-size: 0.75rem;
-    }
-
-    .skill-bar-bg {
-      height: 6px;
-    }
-
-    .skill-bar-fill {
-      height: 6px;
-    }
-
-    .skill-icon {
-      font-size: 0.75rem;
-      width: 22px;
-      height: 22px;
-    }
-
-    .certifications-section {
-      margin-top: 40px;
-    }
-
-    .certifications-title {
-      font-size: 1.25rem;
-      flex-direction: column;
-      gap: 8px;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .title-icon {
-      font-size: 1.5rem;
-    }
-
-    .certifications-grid {
-      gap: 12px;
-    }
-
-    .cert-card {
-      padding: 16px;
-      border-radius: 12px;
-    }
-
-    .cert-icon {
-      font-size: 1.5rem;
-    }
-
-    .cert-name {
-      font-size: 0.875rem;
-    }
-
-    .cert-issuer {
-      font-size: 0.75rem;
-    }
-
-    .cert-tag {
-      padding: 4px 10px;
-      font-size: 0.65rem;
-    }
-  }
-
-  @media (max-width: 380px) {
-    .section-title {
-      font-size: 1.5rem;
-    }
-
-    .section-description {
-      font-size: 0.875rem;
-    }
-
-    .skill-category {
-      padding: 16px;
-    }
-
-    .category-name {
-      font-size: 1rem;
-    }
-
-    .skill-name {
-      font-size: 0.8rem;
-    }
-
-    .certifications-title {
-      font-size: 1.125rem;
-    }
-  }
-
-  /* Light Mode Styles */
-  html.light-mode .skills-section {
-    background: linear-gradient(180deg, #f5f5f5 0%, #ffffff 100%);
-  }
-
-  html.light-mode .section-description {
-    color: rgba(10, 10, 10, 0.75);
-  }
-
-  html.light-mode .skill-category {
-    background: rgba(0, 0, 0, 0.03);
-    border: 1px solid rgba(0, 0, 0, 0.12);
-  }
-
-  html.light-mode .skill-category:hover {
-    background: rgba(0, 0, 0, 0.04);
-    border-color: rgba(231, 111, 81, 0.3);
-  }
-
-  html.light-mode .category-name {
-    color: #0a0a0a;
-  }
-
-  html.light-mode .skill-name {
-    color: #0a0a0a;
-  }
-
-  html.light-mode .skill-level {
-    color: rgba(10, 10, 10, 0.65);
-  }
-
-  html.light-mode .skill-bar-bg {
-    background: rgba(0, 0, 0, 0.08);
-  }
-
-  html.light-mode .skill-icon {
-    background: rgba(231, 111, 81, 0.1);
-    color: #e76f51;
-  }
-
-  html.light-mode .cert-card {
-    background: rgba(0, 0, 0, 0.03);
-    border: 1px solid rgba(0, 0, 0, 0.12);
-  }
-
-  html.light-mode .cert-card:hover {
-    background: rgba(0, 0, 0, 0.04);
-    border-color: rgba(231, 111, 81, 0.3);
-  }
-
-  html.light-mode .cert-name {
-    color: #0a0a0a;
-  }
-
-  html.light-mode .cert-issuer {
-    color: rgba(10, 10, 10, 0.65);
-  }
-
-  html.light-mode .cert-tag {
-    background: rgba(34, 197, 94, 0.1);
-    color: #16a34a;
   }
 </style>

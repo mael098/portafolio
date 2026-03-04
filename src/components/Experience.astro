@@ -1,953 +1,210 @@
 ---
 const experience = [
   {
-    role: "Desarrollador Full Stack",
-    company: "Proyectos Independientes / Académicos",
-    period: "2025 - Presente",
-    description:
-      "Diseño y desarrollo de aplicaciones web completas, desde el frontend hasta la lógica backend y bases de datos. Enfoque en estabilidad, buena arquitectura y experiencia de usuario.",
-    achievements: [
-      "Desarrollo de plataformas web funcionales en producción usando Next.js y Prisma",
-      "Implementación de APIs con validaciones, manejo de errores y estructura escalable",
-      "Optimización de interfaces enfocadas en usabilidad y diseño responsivo",
-      "Experiencia en despliegue y mantenimiento de aplicaciones web"
-    ],
-    technologies: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Node.js",
-      "Prisma",
-      "TailwindCSS",
-      "PostgreSQL",
-      "Docker"
+    role: 'Desarrollador Full Stack',
+    company: 'Proyectos independientes y académicos',
+    period: '2025 - Actualidad',
+    points: [
+      'Construcción de aplicaciones web completas con Next.js, TypeScript y Prisma.',
+      'Implementación de APIs con validación, manejo de errores y estructura escalable.',
+      'Entrega de interfaces responsivas enfocadas en usabilidad y rendimiento.'
     ]
   },
   {
-    role: "Desarrollador de Sistemas y Plataformas Digitales",
-    company: "Servicio Social / Concursos de Innovación",
-    period: "2025",
-    description:
-      "Participación en proyectos tecnológicos orientados a la gestión de información, innovación social y apoyo a la toma de decisiones.",
-    achievements: [
-      "Desarrollo de una plataforma geográfica digital para gestión urbana (Geotampico)",
-      "Diseño de prototipos funcionales presentados ante jurados académicos e industriales",
-      "Trabajo colaborativo en equipos multidisciplinarios",
-      "Aplicación de principios de arquitectura limpia y modular"
-    ],
-    technologies: [
-      "JavaScript",
-      "Next.js",
-      "GIS",
-      "Bases de Datos",
-      "Git",
-      "Linux"
+    role: 'Desarrollador de plataformas digitales',
+    company: 'Servicio social y concursos de innovación',
+    period: '2024 - 2025',
+    points: [
+      'Participación en Geotampico para análisis y visualización geoespacial.',
+      'Diseño de prototipos funcionales para evaluación académica e industrial.',
+      'Colaboración en equipos multidisciplinarios con comunicación técnica clara.'
     ]
   }
 ];
-
 
 const education = [
   {
-    degree: "Ingeniería en Sistemas Computacionales",
-    institution: "Universidad instituto Tecnológico de Altamira",
-    period: "2022 - cursando",
-    highlight: "Promedio actual: 9.2/10 reconociminetos por dar un taller de introducción ala web"
-  },{
-    degree: "Técnico en Programación",
-    institution: "CBTIS 105",
-    period: "2018 - 2022",
-    highlight: ""
+    degree: 'Ingeniería en Sistemas Computacionales',
+    institution: 'Instituto Tecnológico de Altamira',
+    period: '2022 - En curso',
+    detail: 'Promedio 9.2 / 10 · participación en talleres de desarrollo web.'
+  },
+  {
+    degree: 'Técnico en Programación',
+    institution: 'CBTis 105',
+    period: '2018 - 2022',
+    detail: 'Base sólida en lógica de programación, web y bases de datos.'
   }
 ];
-
-const achievements = [
-  {
-    icon: "💻",
-    title: "Full Stack Projects Delivered",
-    description: "Desarrollo de aplicaciones web funcionales usando Next.js, Prisma y Tailwind, desde la idea hasta producción"
-  },
-  {
-    icon: "🧠",
-    title: "Problem-Solving Developer",
-    description: "Resolución de problemas reales en integración de APIs, manejo de errores y arquitectura frontend"
-  },
-  {
-    icon: "🗺️",
-    title: "Geospatial Platform Development",
-    description: "Creación de una plataforma geográfica digital para gestión urbana y toma de decisiones institucionales"
-  },
-  {
-    icon: "🚀",
-    title: "Innovation & Prototyping",
-    description: "Diseño y presentación de prototipos funcionales en concursos de innovación y proyectos académicos"
-  },
-  {
-    icon: "📈",
-    title: "User-Focused Applications",
-    description: "Desarrollo de plataformas enfocadas en usabilidad, diseño moderno y experiencia de usuario"
-  }
-];
-
 ---
 
 <section id="experience" class="experience-section">
   <div class="container">
-    <div class="section-header">
+    <header class="section-header">
       <span class="section-tag">TRAYECTORIA</span>
-      <h2 class="section-title">Experiencia & Logros</h2>
+      <h2 class="section-title">Experiencia profesional</h2>
       <p class="section-description">
-        Trayectoria profesional construyendo soluciones tecnológicas que impactan positivamente 
-        en usuarios y equipos de desarrollo.
+        Formación técnica y proyectos reales enfocados en construir software funcional, mantenible y orientado a resultados.
       </p>
-    </div>
+    </header>
 
-    <!-- Timeline de Experiencia -->
-    <div class="experience-timeline">
-      <div class="timeline-line"></div>
-      {experience.map((job, index) => (
-        <article class="timeline-item" data-index={index}>
-          <div class="timeline-marker">
-            <div class="marker-dot"></div>
-            <div class="marker-ring"></div>
+    <div class="timeline">
+      {experience.map((job) => (
+        <article class="timeline-item">
+          <div class="item-head">
+            <h3>{job.role}</h3>
+            <span>{job.period}</span>
           </div>
-          
-          <div class="timeline-content">
-            <div class="job-header">
-              <div class="job-info">
-                <h3 class="job-role">{job.role}</h3>
-                <p class="job-company">{job.company}</p>
-              </div>
-              <span class="job-period">{job.period}</span>
-            </div>
-
-            <p class="job-description">{job.description}</p>
-
-            <div class="achievements-list">
-              <h4 class="achievements-title">Logros principales:</h4>
-              <ul class="achievements-items">
-                {job.achievements.map((achievement) => (
-                  <li class="achievement-item">
-                    <span class="achievement-icon">✓</span>
-                    <span>{achievement}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div class="tech-tags">
-              {job.technologies.map((tech) => (
-                <span class="tech-tag">{tech}</span>
-              ))}
-            </div>
-          </div>
+          <p class="item-company">{job.company}</p>
+          <ul>
+            {job.points.map((point) => (
+              <li>{point}</li>
+            ))}
+          </ul>
         </article>
       ))}
     </div>
 
-    <!-- Educación -->
-    <div class="education-section">
-      <h3 class="subsection-title">
-        <span class="title-icon">🎓</span>
-        Educación
-      </h3>
-      <div class="education-grid">
-        {education.map((edu) => (
-          <div class="education-card">
-            <div class="edu-content">
-              <h4 class="edu-degree">{edu.degree}</h4>
-              <p class="edu-institution">{edu.institution}</p>
-              <p class="edu-period">{edu.period}</p>
-              {edu.highlight && (
-                <div class="edu-highlight">
-                  <span class="highlight-icon">⭐</span>
-                  <span>{edu.highlight}</span>
-                </div>
-              )}
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-
-    <!-- Logros Destacados -->
-    <div class="achievements-section">
-      <h3 class="subsection-title">
-        <span class="title-icon">🌟</span>
-        Logros Destacados
-      </h3>
-      <div class="achievements-grid">
-        {achievements.map((achievement) => (
-          <div class="achievement-card">
-            <div class="achievement-icon-large">{achievement.icon}</div>
-            <h4 class="achievement-title">{achievement.title}</h4>
-            <p class="achievement-description">{achievement.description}</p>
-          </div>
-        ))}
-      </div>
+    <div class="education-grid">
+      {education.map((edu) => (
+        <article class="education-card">
+          <h3>{edu.degree}</h3>
+          <p class="institution">{edu.institution}</p>
+          <p class="period">{edu.period}</p>
+          <p class="detail">{edu.detail}</p>
+        </article>
+      ))}
     </div>
   </div>
 </section>
 
 <style>
   .experience-section {
-    padding: 120px 0;
-    background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
-    position: relative;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
+    padding: 110px 0;
+    background: linear-gradient(180deg, var(--background) 0%, var(--secondary) 100%);
   }
 
   .section-header {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 48px;
   }
 
   .section-tag {
     display: inline-block;
-    padding: 8px 16px;
-    background: rgba(244, 162, 97, 0.1);
-    border: 1px solid rgba(244, 162, 97, 0.3);
-    border-radius: 50px;
-    color: #f4a261;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(244, 162, 97, 0.35);
+    color: var(--accent);
     font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    margin-bottom: 16px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
   }
 
   .section-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 800;
-    background: linear-gradient(135deg, #ffffff 0%, #f4a261 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 24px;
-    line-height: 1.1;
-  }
-
-  html.light-mode .section-title {
-    background: linear-gradient(135deg, #0a0a0a 0%, #e76f51 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-size: clamp(1.85rem, 4vw, 3rem);
+    margin-bottom: 12px;
   }
 
   .section-description {
-    font-size: 1.125rem;
-    color: rgba(255, 255, 255, 0.7);
-    max-width: 600px;
+    color: var(--text-secondary);
+    max-width: 68ch;
     margin: 0 auto;
-    line-height: 1.6;
   }
 
-  /* Timeline */
-  .experience-timeline {
-    position: relative;
-    padding-left: 80px;
-    margin-bottom: 80px;
-  }
-
-  .timeline-line {
-    position: absolute;
-    left: 24px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(180deg, 
-      rgba(244, 162, 97, 0) 0%, 
-      rgba(244, 162, 97, 0.5) 50%, 
-      rgba(244, 162, 97, 0) 100%
-    );
+  .timeline {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 26px;
   }
 
   .timeline-item {
-    position: relative;
-    margin-bottom: 60px;
-  }
-
-  .timeline-item:last-child {
-    margin-bottom: 0;
-  }
-
-  .timeline-marker {
-    position: absolute;
-    left: -68px;
-    top: 8px;
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .marker-dot {
-    width: 16px;
-    height: 16px;
-    background: linear-gradient(135deg, #f4a261, #e76f51);
-    border-radius: 50%;
-    box-shadow: 0 0 20px rgba(244, 162, 97, 0.5);
-    z-index: 2;
-  }
-
-  .marker-ring {
-    position: absolute;
-    width: 48px;
-    height: 48px;
-    border: 2px solid rgba(244, 162, 97, 0.3);
-    border-radius: 50%;
-    animation: pulse-ring 2s infinite;
-  }
-
-  @keyframes pulse-ring {
-    0% {
-      transform: scale(1);
-      opacity: 1;
-    }
-    100% {
-      transform: scale(1.5);
-      opacity: 0;
-    }
-  }
-
-  .timeline-content {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
     border-radius: 16px;
-    padding: 32px;
-    transition: all 0.3s ease;
+    padding: 20px;
+    background: var(--background-card);
   }
 
-  .timeline-content:hover {
-    background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(244, 162, 97, 0.3);
-    transform: translateX(8px);
-  }
-
-  .job-header {
+  .item-head {
     display: flex;
-    justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 16px;
-    gap: 20px;
-  }
-
-  .job-role {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #ffffff;
+    justify-content: space-between;
+    gap: 12px;
     margin-bottom: 4px;
   }
 
-  .job-company {
-    font-size: 1rem;
-    color: #f4a261;
-    font-weight: 600;
+  .item-head h3 {
+    font-size: 1.2rem;
   }
 
-  .job-period {
-    padding: 6px 16px;
-    background: rgba(244, 162, 97, 0.1);
-    border: 1px solid rgba(244, 162, 97, 0.3);
-    border-radius: 50px;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.875rem;
-    font-weight: 600;
+  .item-head span {
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    padding: 5px 10px;
     white-space: nowrap;
   }
 
-  .job-description {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.7;
-    margin-bottom: 24px;
-  }
-
-  .achievements-list {
-    margin-bottom: 24px;
-  }
-
-  .achievements-title {
-    font-size: 0.875rem;
-    color: rgba(255, 255, 255, 0.6);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 12px;
+  .item-company {
+    color: var(--accent);
+    margin-bottom: 10px;
     font-weight: 600;
   }
 
-  .achievements-items {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
+  .timeline-item ul {
+    margin: 0;
+    padding-left: 18px;
+    color: var(--text-secondary);
+    display: grid;
     gap: 8px;
-  }
-
-  .achievement-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
-  html.light-mode .achievement-item {
-    color: rgba(10, 10, 10, 0.85);
-  }
-
-  .achievement-icon {
-    color: #22c55e;
-    font-weight: 700;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-
-  .tech-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .tech-tag {
-    padding: 6px 14px;
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(244, 162, 97, 0.2);
-    border-radius: 50px;
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 0.8rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-  }
-
-  .tech-tag:hover {
-    background: rgba(244, 162, 97, 0.2);
-    border-color: rgba(244, 162, 97, 0.4);
-  }
-
-  /* Educación */
-  .education-section,
-  .achievements-section {
-    margin-top: 80px;
-  }
-
-  .subsection-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 40px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  html.light-mode .subsection-title {
-    color: #0a0a0a;
-  }
-
-  .title-icon {
-    font-size: 2rem;
   }
 
   .education-grid {
     display: grid;
-    gap: 24px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
   }
 
   .education-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
     border-radius: 16px;
-    padding: 32px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
+    padding: 18px;
+    background: var(--background-card);
   }
 
-  .education-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 4px;
-    height: 100%;
-    background: linear-gradient(180deg, #f4a261, #e76f51);
+  .education-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 6px;
   }
 
-  .education-card:hover {
-    background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(244, 162, 97, 0.3);
-    transform: translateY(-4px);
-  }
-
-  .edu-degree {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 8px;
-  }
-
-  .edu-institution {
-    font-size: 1.125rem;
-    color: #f4a261;
-    margin-bottom: 8px;
+  .institution {
+    color: var(--accent);
+    margin-bottom: 4px;
     font-weight: 600;
   }
 
-  .edu-period {
+  .period,
+  .detail {
+    color: var(--text-secondary);
     font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 16px;
   }
 
-  .edu-highlight {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    background: rgba(244, 162, 97, 0.1);
-    border: 1px solid rgba(244, 162, 97, 0.3);
-    border-radius: 50px;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.875rem;
-    font-weight: 600;
+  .detail {
+    margin-top: 8px;
   }
 
-  html.light-mode .edu-highlight {
-    background: rgba(231, 111, 81, 0.15);
-    border-color: rgba(231, 111, 81, 0.4);
-    color: rgba(10, 10, 10, 0.9);
-  }
-
-  .highlight-icon {
-    font-size: 1rem;
-  }
-
-  /* Logros */
-  .achievements-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-  }
-
-  .achievement-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    padding: 32px;
-    text-align: center;
-    transition: all 0.3s ease;
-  }
-
-  .achievement-card:hover {
-    background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(244, 162, 97, 0.3);
-    transform: translateY(-8px);
-  }
-
-  .achievement-icon-large {
-    font-size: 3rem;
-    margin-bottom: 16px;
-  }
-
-  .achievement-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 12px;
-  }
-
-  html.light-mode .achievement-title {
-    color: #0a0a0a;
-  }
-
-  .achievement-description {
-    font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.6;
-  }
-
-  html.light-mode .achievement-description {
-    color: rgba(10, 10, 10, 0.75);
-  }
-
-  /* Responsive */
-  @media (max-width: 1024px) {
-    .experience-section {
-      padding: 100px 0 80px;
-    }
-
-    .section-title {
-      font-size: clamp(2rem, 4vw, 3rem);
-    }
-
-    .timeline-content {
-      padding: 28px;
-    }
-  }
-
-  @media (max-width: 968px) {
+  @media (max-width: 760px) {
     .experience-section {
       padding: 80px 0;
     }
 
-    .container {
-      padding: 0 20px;
-    }
-
-    .section-header {
-      margin-bottom: 50px;
-    }
-
-    .section-tag {
-      font-size: 0.7rem;
-      padding: 6px 14px;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      margin-bottom: 16px;
-    }
-
-    .section-description {
-      font-size: 1rem;
-    }
-
-    .experience-timeline {
-      padding-left: 60px;
-      gap: 48px;
-    }
-
-    .timeline-marker {
-      left: -56px;
-    }
-
-    .job-header {
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .job-period {
-      align-self: flex-start;
-    }
-
-    .achievements-grid {
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 12px;
-    }
-
-    .education-section {
-      margin-top: 60px;
-    }
-
     .education-grid {
-      gap: 20px;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .experience-section {
-      padding: 60px 0 40px;
-    }
-
-    .container {
-      padding: 0 16px;
-    }
-
-    .section-header {
-      margin-bottom: 40px;
-    }
-
-    .section-tag {
-      padding: 6px 12px;
-      font-size: 0.65rem;
-      letter-spacing: 1.5px;
-    }
-
-    .section-title {
-      font-size: 1.75rem;
-      margin-bottom: 12px;
-    }
-
-    .section-description {
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .experience-timeline {
-      padding-left: 40px;
-      gap: 40px;
-    }
-
-    .timeline-item {
-      padding-bottom: 30px;
-    }
-
-    .timeline-marker {
-      left: -44px;
-      width: 32px;
-      height: 32px;
-    }
-
-    .marker-dot {
-      width: 12px;
-      height: 12px;
-    }
-
-    .marker-ring {
-      width: 32px;
-      height: 32px;
-    }
-
-    .timeline-content {
-      padding: 20px;
-      border-radius: 16px;
-    }
-
-    .job-header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 10px;
-      margin-bottom: 12px;
-    }
-
-    .job-role {
-      font-size: 1.125rem;
-      margin-bottom: 6px;
-    }
-
-    .job-company {
-      font-size: 0.9rem;
-    }
-
-    .job-period {
-      font-size: 0.8rem;
-      padding: 4px 10px;
-    }
-
-    .job-description {
-      font-size: 0.9rem;
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
-
-    .achievements-title {
-      font-size: 0.875rem;
-      margin-bottom: 12px;
-    }
-
-    .achievements-grid {
       grid-template-columns: 1fr;
-      gap: 10px;
     }
 
-    .achievement-card {
-      padding: 10px 12px;
-      font-size: 0.8rem;
+    .item-head {
+      flex-direction: column;
     }
-
-    .achievement-icon {
-      font-size: 0.85rem;
-      width: 20px;
-      height: 20px;
-    }
-
-    .tech-stack {
-      gap: 6px;
-      margin-top: 16px;
-    }
-
-    .tech-badge {
-      padding: 4px 10px;
-      font-size: 0.7rem;
-    }
-
-    .education-section {
-      margin-top: 40px;
-    }
-
-    .education-title {
-      font-size: 1.25rem;
-      margin-bottom: 20px;
-    }
-
-    .title-icon {
-      font-size: 1.5rem;
-    }
-
-    .education-grid {
-      gap: 16px;
-    }
-
-    .education-card {
-      padding: 20px;
-      border-radius: 12px;
-    }
-
-    .edu-degree {
-      font-size: 1.125rem;
-      margin-bottom: 6px;
-    }
-
-    .edu-institution {
-      font-size: 0.95rem;
-      margin-bottom: 6px;
-    }
-
-    .edu-period {
-      font-size: 0.8rem;
-    }
-
-    .edu-details {
-      font-size: 0.85rem;
-      line-height: 1.6;
-    }
-  }
-
-  @media (max-width: 380px) {
-    .section-title {
-      font-size: 1.5rem;
-    }
-
-    .section-description {
-      font-size: 0.875rem;
-    }
-
-    .experience-timeline {
-      padding-left: 35px;
-    }
-
-    .timeline-marker {
-      left: -40px;
-      width: 28px;
-      height: 28px;
-    }
-
-    .marker-dot {
-      width: 10px;
-      height: 10px;
-    }
-
-    .timeline-content {
-      padding: 16px;
-    }
-
-    .job-role {
-      font-size: 1rem;
-    }
-
-    .job-company {
-      font-size: 0.85rem;
-    }
-
-    .achievement-card {
-      font-size: 0.75rem;
-    }
-  }
-
-  /* Light Mode Styles */
-  html.light-mode .experience-section {
-    background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
-  }
-
-  html.light-mode .section-description {
-    color: rgba(10, 10, 10, 0.8) !important;
-  }
-
-  html.light-mode .section-tag {
-    background: rgba(231, 111, 81, 0.15);
-    border-color: rgba(231, 111, 81, 0.4);
-    color: #e76f51;
-  }
-
-  html.light-mode .timeline-item::after {
-    background: rgba(0, 0, 0, 0.1);
-  }
-
-  html.light-mode .timeline-marker {
-    background: rgba(0, 0, 0, 0.03);
-    border: 2px solid rgba(0, 0, 0, 0.1);
-  }
-
-  html.light-mode .marker-dot {
-    background: linear-gradient(135deg, #e76f51, #f4a261);
-  }
-
-  html.light-mode .timeline-content {
-    background: rgba(0, 0, 0, 0.03);
-    border: 1px solid rgba(0, 0, 0, 0.12);
-  }
-
-  html.light-mode .timeline-content:hover {
-    background: rgba(0, 0, 0, 0.04);
-    border-color: rgba(231, 111, 81, 0.3);
-  }
-
-  html.light-mode .job-role {
-    color: #0a0a0a !important;
-  }
-
-  html.light-mode .job-company {
-    color: #e76f51 !important;
-  }
-
-  html.light-mode .job-period {
-    background: rgba(231, 111, 81, 0.15);
-    border-color: rgba(231, 111, 81, 0.4);
-    color: #d45d44 !important;
-    font-weight: 700;
-  }
-
-  html.light-mode .job-description {
-    color: rgba(10, 10, 10, 0.8) !important;
-  }
-
-  html.light-mode .achievements-title {
-    color: rgba(10, 10, 10, 0.7) !important;
-  }
-
-  html.light-mode .achievement-card {
-    background: rgba(231, 111, 81, 0.1);
-    border-color: rgba(231, 111, 81, 0.25);
-  }
-
-  html.light-mode .tech-tag {
-    background: rgba(0, 0, 0, 0.08);
-    border-color: rgba(0, 0, 0, 0.2);
-    color: rgba(10, 10, 10, 0.85) !important;
-  }
-
-  html.light-mode .education-card {
-    background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  }
-
-  html.light-mode .education-card:hover {
-    background: rgba(0, 0, 0, 0.04);
-    border-color: rgba(231, 111, 81, 0.3);
-  }
-
-  html.light-mode .edu-degree {
-    color: #0a0a0a !important;
-  }
-
-  html.light-mode .edu-institution {
-    color: #e76f51 !important;
-  }
-
-  html.light-mode .edu-period {
-    color: rgba(10, 10, 10, 0.7) !important;
-  }
-
-  html.light-mode .timeline-content {
-    background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   }
 </style>

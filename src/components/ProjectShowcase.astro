@@ -6,732 +6,193 @@ interface Project {
   technologies: string[];
   liveUrl: string;
   githubUrl?: string;
-  category: 'web' | 'mobile' | 'backend' | 'fullstack';
-  featured?: boolean;
 }
 
 const projects: Project[] = [
-{
-    title: "GeoTampico — Plataforma de Mapeo Territorial",
-    description: "Aplicación web fullstack para mapear y segmentar el municipio de Tampico. Incluye análisis estadístico, visualización geoespacial, dashboard interactivo y arquitectura de microservicios con autenticación JWT.",
-    image: "/image.png",
-    technologies: ["React", "Node.js", "PostgreSQL", "Docker", "Redis", "JWT"],
-    liveUrl: "http://geotampico.com.mx/",
-    githubUrl: "https://github.com/mael098/proyecto",
-    category: "fullstack",
-    featured: true
-},
-{
-    title: "Plataforma de Jornadas del instituto tecnologico de altamira ingenieria en sistemas",
-    description: "Sistema web para gestionar, registrar y visualizar jornadas realizadas en el municipio, incluyendo ubicación, estadísticas, asistencia y reportes para dependencias como el Instituto de la Juventud.",
-    image: "/image copy.png",
-    technologies: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind"],
-    liveUrl: "https://jornadas-sistemas-2025.vercel.app/", // cámbialo por tu URL real
-    githubUrl: "https://github.com/mael098/jornadas", // ajusta si es otro repo
-    category: "fullstack",
-    featured: true
-},
-
-// {
-//     title: "API RESTful Escalable",
-//     description: "API robusta con arquitectura en capas, documentación Swagger, rate limiting y caching con Redis.",
-//     image: "/cafe.avif",
-//     technologies: ["Node.js", "Express", "MongoDB", "Redis", "Swagger"],
-//     liveUrl: "https://api.ejemplo.com",
-//     githubUrl: "https://github.com/mael098/api",
-//     category: "backend"
-// },
-// {
-//     title: "Dashboard Analytics",
-//     description: "Dashboard interactivo con gráficos dinámicos, filtros avanzados y exportación de reportes.",
-//     image: "/cafe.avif",
-//     technologies: ["React", "D3.js", "TypeScript", "Chart.js", "Material-UI"],
-//     liveUrl: "https://dashboard-demo.vercel.app",
-//     category: "web"
-// }
+  {
+    title: 'GeoTampico · Plataforma de mapeo territorial',
+    description:
+      'Aplicación full stack para segmentación y análisis geoespacial del municipio de Tampico, con dashboard interactivo y autenticación JWT.',
+    image: '/image.png',
+    technologies: ['React', 'Node.js', 'PostgreSQL', 'Docker', 'Redis', 'JWT'],
+    liveUrl: 'http://geotampico.com.mx/',
+    githubUrl: 'https://github.com/mael098/proyecto'
+  },
+  {
+    title: 'Plataforma de jornadas académicas',
+    description:
+      'Sistema web para registrar y visualizar jornadas, con control de información, métricas y reportes para toma de decisiones.',
+    image: '/image copy.png',
+    technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Tailwind CSS'],
+    liveUrl: 'https://jornadas-sistemas-2025.vercel.app/',
+    githubUrl: 'https://github.com/mael098/jornadas'
+  }
 ];
-
-const featuredProjects = projects.filter(p => p.featured);
-const regularProjects = projects.filter(p => !p.featured);
 ---
 
 <section id="projects" class="projects-section">
   <div class="container">
-    <div class="section-header">
+    <header class="section-header">
       <span class="section-tag">PORTAFOLIO</span>
-      <h2 class="section-title">Proyectos Desplegados</h2>
+      <h2 class="section-title">Proyectos destacados</h2>
       <p class="section-description">
-        Soluciones tecnológicas desarrolladas con estándares profesionales,
-        arquitecturas escalables y mejores prácticas de la industria.
+        Productos desplegados con enfoque en arquitectura, experiencia de usuario y ejecución técnica profesional.
       </p>
+    </header>
+
+    <div class="projects-grid">
+      {projects.map((project) => (
+        <article class="project-card">
+          <img src={project.image} alt={project.title} class="project-image" />
+          <div class="project-content">
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+
+            <div class="tech-tags">
+              {project.technologies.map((tech) => (
+                <span>{tech}</span>
+              ))}
+            </div>
+
+            <div class="project-links">
+              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="link-primary">
+                Ver demo
+              </a>
+              {project.githubUrl && (
+                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" class="link-secondary">
+                  Código
+                </a>
+              )}
+            </div>
+          </div>
+        </article>
+      ))}
     </div>
-
-    {featuredProjects.length > 0 && (
-      <div class="featured-projects">
-        <h3 class="subsection-title">
-          <span class="star-icon">⭐</span> Proyectos Destacados
-        </h3>
-        <div class="featured-grid">
-          {featuredProjects.map((project) => (
-            <article class="project-card featured">
-              <div class="project-image-wrapper">
-                <img src={project.image} alt={project.title} class="project-image" />
-                <div class="project-overlay">
-                  <div class="overlay-content">
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="overlay-btn">
-                      <span>🚀 Ver Demo</span>
-                    </a>
-                    {project.githubUrl && (
-                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" class="overlay-btn">
-                        <span>📂 Código</span>
-                      </a>
-                    )}
-                  </div>
-                </div>
-                <span class="category-badge">{project.category}</span>
-              </div>
-              
-              <div class="project-content">
-                <h4 class="project-title">{project.title}</h4>
-                <p class="project-description">{project.description}</p>
-                
-                <div class="tech-stack">
-                  <span class="tech-label">Stack:</span>
-                  <div class="tech-tags">
-                    {project.technologies.map((tech) => (
-                      <span class="tech-tag">{tech}</span>
-                    ))}
-                  </div>
-                </div>
-
-                <div class="project-links">
-                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="link-btn primary">
-                    Live Demo →
-                  </a>
-                  {project.githubUrl && (
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" class="link-btn secondary">
-                      GitHub
-                    </a>
-                  )}
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    )}
-
-    {regularProjects.length > 0 && (
-      <div class="regular-projects">
-        <h3 class="subsection-title">Más Proyectos</h3>
-        <div class="projects-grid">
-          {regularProjects.map((project) => (
-            <article class="project-card compact">
-              <div class="project-image-wrapper small">
-                <img src={project.image} alt={project.title} class="project-image" />
-                <span class="category-badge small">{project.category}</span>
-              </div>
-              
-              <div class="project-content compact">
-                <h4 class="project-title">{project.title}</h4>
-                <p class="project-description">{project.description}</p>
-                
-                <div class="tech-stack compact">
-                  {project.technologies.slice(0, 4).map((tech) => (
-                    <span class="tech-tag">{tech}</span>
-                  ))}
-                  {project.technologies.length > 4 && (
-                    <span class="tech-tag more">+{project.technologies.length - 4}</span>
-                  )}
-                </div>
-
-                <div class="project-links compact">
-                  <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="link-btn small">
-                    Ver →
-                  </a>
-                  {project.githubUrl && (
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" class="link-btn small secondary">
-                      Repo
-                    </a>
-                  )}
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    )}
   </div>
 </section>
 
 <style>
   .projects-section {
-    padding: 120px 0;
-    background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
-    position: relative;
-  }
-
-  .projects-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100%;
-    background: radial-gradient(circle at 50% 0%, rgba(244, 162, 97, 0.1), transparent 50%);
-    pointer-events: none;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
+    padding: 110px 0;
+    background: linear-gradient(180deg, var(--secondary) 0%, var(--background) 100%);
   }
 
   .section-header {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 44px;
   }
 
   .section-tag {
     display: inline-block;
-    padding: 8px 16px;
-    background: rgba(244, 162, 97, 0.1);
-    border: 1px solid rgba(244, 162, 97, 0.3);
-    border-radius: 50px;
-    color: #f4a261;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(244, 162, 97, 0.35);
+    color: var(--accent);
     font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    margin-bottom: 16px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
   }
 
   .section-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 800;
-    background: linear-gradient(135deg, #ffffff 0%, #f4a261 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 24px;
-    line-height: 1.1;
+    font-size: clamp(1.85rem, 4vw, 3rem);
+    margin-bottom: 12px;
   }
 
   .section-description {
-    font-size: 1.125rem;
-    color: rgba(255, 255, 255, 0.7);
-    max-width: 600px;
+    color: var(--text-secondary);
+    max-width: 66ch;
     margin: 0 auto;
-    line-height: 1.6;
   }
 
-  .featured-projects {
-    margin-bottom: 80px;
-  }
-
-  .subsection-title {
-    font-size: 1.75rem;
-    color: #ffffff;
-    margin-bottom: 32px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .star-icon {
-    font-size: 1.5rem;
-  }
-
-  .featured-grid {
+  .projects-grid {
     display: grid;
-    gap: 40px;
+    gap: 16px;
   }
 
   .project-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-  }
-
-  .project-card.featured {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0;
-  }
-
-  .project-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(244, 162, 97, 0.3);
-    box-shadow: 0 24px 48px rgba(244, 162, 97, 0.15);
-  }
-
-  .project-image-wrapper {
-    position: relative;
+    border-radius: 16px;
     overflow: hidden;
-    aspect-ratio: 16/9;
-  }
-
-  .project-card.featured .project-image-wrapper {
-    aspect-ratio: initial;
-    height: 100%;
+    border: 1px solid var(--border-color);
+    background: var(--background-card);
   }
 
   .project-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
-  }
-
-  .project-card:hover .project-image {
-    transform: scale(1.1);
-  }
-
-  .project-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(244, 162, 97, 0.9), rgba(231, 111, 81, 0.9));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  .project-card:hover .project-overlay {
-    opacity: 1;
-  }
-
-  .overlay-content {
-    display: flex;
-    gap: 16px;
-  }
-
-  .overlay-btn {
-    padding: 12px 24px;
-    background: rgba(255, 255, 255, 0.95);
-    color: #1a1a1a;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .overlay-btn:hover {
-    background: #ffffff;
-    transform: translateY(-2px);
-  }
-
-  .category-badge {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    padding: 6px 16px;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(244, 162, 97, 0.3);
-    border-radius: 50px;
-    color: #f4a261;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    min-height: 260px;
   }
 
   .project-content {
-    padding: 32px;
+    padding: 22px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
   }
 
-  .project-title {
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 16px;
-    line-height: 1.3;
+  .project-content h3 {
+    font-size: 1.22rem;
+    margin-bottom: 10px;
   }
 
-  .project-description {
-    font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.7;
-    margin-bottom: 24px;
-  }
-
-  .tech-stack {
-    margin-bottom: 24px;
-  }
-
-  .tech-label {
-    display: block;
-    font-size: 0.75rem;
-    color: #f4a261;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 12px;
+  .project-content p {
+    color: var(--text-secondary);
+    margin-bottom: 14px;
   }
 
   .tech-tags {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    margin-bottom: 16px;
   }
 
-  .tech-tag {
-    padding: 6px 14px;
-    background: rgba(244, 162, 97, 0.1);
-    border: 1px solid rgba(244, 162, 97, 0.3);
-    border-radius: 50px;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.8rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-  }
-
-  .tech-tag:hover {
-    background: rgba(244, 162, 97, 0.2);
-    border-color: rgba(244, 162, 97, 0.5);
-  }
-
-  .tech-tag.more {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.2);
+  .tech-tags span {
+    font-size: 0.78rem;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    padding: 4px 10px;
+    color: var(--text-secondary);
   }
 
   .project-links {
     display: flex;
-    gap: 12px;
+    gap: 10px;
+    margin-top: auto;
   }
 
-  .link-btn {
-    padding: 12px 28px;
-    border-radius: 50px;
+  .project-links a {
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9rem;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    border-radius: 999px;
+    padding: 10px 16px;
   }
 
-  .link-btn.primary {
-    background: linear-gradient(135deg, #f4a261, #e76f51);
-    color: #ffffff;
-    border: none;
+  .link-primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    color: #fff;
   }
 
-  .link-btn.primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(244, 162, 97, 0.4);
-  }
-
-  .link-btn.secondary {
+  .link-secondary {
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
     background: transparent;
-    color: rgba(255, 255, 255, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.3);
   }
 
-  .link-btn.secondary:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.5);
-  }
-
-  /* Proyectos compactos */
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 24px;
-  }
-
-  .project-card.compact {
-    display: block;
-  }
-
-  .project-image-wrapper.small {
-    aspect-ratio: 16/9;
-  }
-
-  .project-content.compact {
-    padding: 24px;
-  }
-
-  .project-content.compact .project-title {
-    font-size: 1.25rem;
-    margin-bottom: 12px;
-  }
-
-  .project-content.compact .project-description {
-    font-size: 0.875rem;
-    margin-bottom: 16px;
-  }
-
-  .tech-stack.compact {
-    margin-bottom: 16px;
-  }
-
-  .tech-stack.compact .tech-tags {
-    gap: 6px;
-  }
-
-  .tech-stack.compact .tech-tag {
-    padding: 4px 10px;
-    font-size: 0.75rem;
-  }
-
-  .project-links.compact {
-    gap: 8px;
-  }
-
-  .link-btn.small {
-    padding: 8px 20px;
-    font-size: 0.85rem;
-  }
-
-  .category-badge.small {
-    padding: 4px 12px;
-    font-size: 0.7rem;
-  }
-
-  /* Responsive */
-  @media (max-width: 1024px) {
+  @media (max-width: 920px) {
     .projects-section {
-      padding: 100px 0 80px;
-    }
-
-    .section-title {
-      font-size: clamp(2rem, 4vw, 3rem);
-    }
-
-    .projects-grid {
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 24px;
-    }
-  }
-
-  @media (max-width: 968px) {
-    .projects-section {
-      padding: 80px 0 60px;
-    }
-
-    .container {
-      padding: 0 20px;
-    }
-
-    .section-header {
-      margin-bottom: 50px;
-    }
-
-    .section-tag {
-      font-size: 0.7rem;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      margin-bottom: 16px;
-    }
-
-    .section-description {
-      font-size: 1rem;
-    }
-
-    .project-card.featured {
-      grid-template-columns: 1fr;
-    }
-
-    .project-card.featured .project-image-wrapper {
-      aspect-ratio: 16/9;
-      height: auto;
-    }
-
-    .projects-grid {
-      grid-template-columns: 1fr;
-      gap: 20px;
-    }
-
-    .featured-projects {
-      margin-bottom: 50px;
-      gap: 20px;
-    }
-
-    .project-content {
-      padding: 24px;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .projects-section {
-      padding: 60px 0 40px;
-    }
-
-    .container {
-      padding: 0 16px;
-    }
-
-    .section-header {
-      margin-bottom: 40px;
-    }
-
-    .section-tag {
-      padding: 6px 12px;
-      font-size: 0.65rem;
-      letter-spacing: 1.5px;
-    }
-
-    .section-title {
-      font-size: 1.75rem;
-      margin-bottom: 12px;
-    }
-
-    .section-description {
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .featured-projects,
-    .projects-grid {
-      gap: 16px;
+      padding: 80px 0;
     }
 
     .project-card {
-      border-radius: 16px;
+      grid-template-columns: 1fr;
     }
 
-    .project-content {
-      padding: 20px;
+    .project-image {
+      min-height: 200px;
     }
-
-    .project-category {
-      font-size: 0.7rem;
-      padding: 4px 10px;
-    }
-
-    .project-title {
-      font-size: 1.25rem;
-      margin-bottom: 10px;
-    }
-
-    .project-description {
-      font-size: 0.9rem;
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
-
-    .project-tech {
-      gap: 6px;
-      margin-bottom: 20px;
-    }
-
-    .tech-tag {
-      padding: 4px 10px;
-      font-size: 0.7rem;
-    }
-
-    .overlay-content {
-      flex-direction: column;
-      gap: 12px;
-      padding: 20px;
-    }
-
-    .overlay-btn {
-      width: 100%;
-      justify-content: center;
-      padding: 12px 20px;
-      font-size: 0.9rem;
-    }
-
-    .project-links {
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .link-btn {
-      width: 100%;
-      justify-content: center;
-      padding: 10px 20px;
-      font-size: 0.85rem;
-    }
-  }
-
-  @media (max-width: 380px) {
-    .section-title {
-      font-size: 1.5rem;
-    }
-
-    .section-description {
-      font-size: 0.875rem;
-    }
-
-    .project-title {
-      font-size: 1.125rem;
-    }
-
-    .project-description {
-      font-size: 0.85rem;
-    }
-
-    .tech-tag {
-      font-size: 0.65rem;
-      padding: 3px 8px;
-    }
-  }
-
-  /* Light Mode Styles */
-  html.light-mode .projects-section {
-    background: linear-gradient(180deg, #ffffff 0%, #f5f5f5 100%);
-  }
-
-  html.light-mode .section-description {
-    color: rgba(10, 10, 10, 0.75);
-  }
-
-  html.light-mode .project-card {
-    background: rgba(0, 0, 0, 0.03);
-    border: 1px solid rgba(0, 0, 0, 0.12);
-  }
-
-  html.light-mode .project-card:hover {
-    border-color: rgba(231, 111, 81, 0.3);
-    box-shadow: 0 24px 48px rgba(231, 111, 81, 0.1);
-  }
-
-  html.light-mode .project-category {
-    background: rgba(0, 0, 0, 0.06);
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    color: rgba(10, 10, 10, 0.75);
-  }
-
-  html.light-mode .project-title {
-    color: #0a0a0a;
-  }
-
-  html.light-mode .project-description {
-    color: rgba(10, 10, 10, 0.75);
-  }
-
-  html.light-mode .tech-tag {
-    background: rgba(231, 111, 81, 0.12);
-    border: 1px solid rgba(231, 111, 81, 0.25);
-    color: rgba(10, 10, 10, 0.9);
-  }
-
-  html.light-mode .link-btn {
-    background: rgba(0, 0, 0, 0.05);
-    border-color: rgba(0, 0, 0, 0.2);
-    color: rgba(10, 10, 10, 0.85);
-  }
-
-  html.light-mode .link-btn:hover {
-    background: rgba(231, 111, 81, 0.1);
-    border-color: rgba(231, 111, 81, 0.3);
   }
 </style>
