@@ -14,7 +14,7 @@ const projects: Project[] = [
     description:
       'Aplicación full stack para segmentación y análisis geoespacial del municipio de Tampico, con dashboard interactivo y autenticación JWT.',
     image: '/image copy 2.png',
-    technologies: ['React', 'Node.js', 'PostgreSQL', 'Docker', 'Redis', 'JWT'],
+    technologies: ['React', 'TypeScript','Node.js', 'PostgreSQL', 'PrismaORM','Docker', 'Redis', 'JWT'],
     liveUrl: 'http://geotampico.com.mx/',
     githubUrl: 'https://github.com/mael098/proyecto'
   },
@@ -23,16 +23,31 @@ const projects: Project[] = [
     description:
       'Sistema web para registrar y visualizar jornadas, con control de información, métricas y reportes para toma de decisiones.',
     image: '/image copy.png',
-    technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Tailwind CSS'],
+    technologies: ['Next.js', 'TypeScript', 'PostgreSQL', 'Tailwind CSS','PrismaORM'],
     liveUrl: 'https://jornadas-sistemas-2025.vercel.app/',
     githubUrl: 'https://github.com/mael098/jornadas'
   },
   {
-    title:'Plataforma web Landi Page',
+    title:'Plataforma web Landi Page para escuela de inglés',
     description:'Sitio web landi page de una escuela de ingles con información de cursos y contacto.',
     image: '/image copy 3.png',
     technologies: ['Next.js', 'Tailwind CSS', 'TypeScript',"React"],
-    liveUrl: 'https://landing-page-astro.vercel.app/'
+    liveUrl: 'https://easylearningschool.vercel.app/'
+  },
+  {
+    title:'Plataforma web de edicion de archivos PDF',
+    description:'Aplicación web para editar archivos PDF, con funcionalidades de agregar texto',
+    image: '/image copy 4.png',
+    technologies: ['Vite.js', 'Tailwind CSS', 'TypeScript',"React"],
+    liveUrl: 'https://editor-pdf-two.vercel.app/',
+    githubUrl: 'https://github.com/mael098/editor_PDF'
+  },
+  {
+    title:'bustsystem · Sistema de gestión de transporte público',
+    description:'Aplicación web para gestionar rutas, horarios y usuarios de transporte público, con panel de administración y autenticación.',
+    image: '/image copy 5.png',
+    technologies: ['React Native', 'TypeScript', 'Node.js', 'PostgreSQL', 'PrismaORM','Docker', 'JWT', 'express.js'],
+    liveUrl: 'https://github.com/mael098/bustsystem',
   }
 ];
 ---
@@ -63,7 +78,7 @@ const projects: Project[] = [
 
             <div class="project-links">
               <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="link-primary">
-                Ver demo
+                Ver proyecto
               </a>
               {project.githubUrl && (
                 <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" class="link-secondary">
